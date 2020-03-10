@@ -1,0 +1,48 @@
+# Installation
+
+> To install, use this code:
+
+```shell
+# install 3rd party dependencies
+$ npm install
+
+# install additional build tools
+# run this if you get "cannot find tsc command" error
+$ npm install -g typescript 
+```
+
+Install the Planning Analytics Workspace UI API by running these code examples in terminal or commandline.
+
+
+# Running the application
+
+```shell
+# development
+$ npm run start
+
+# watch mode
+$ npm run start-dev
+
+# build
+$ npm run build
+
+# production mode
+$ npm run start-prod
+```
+
+This application will read config values from the environment variables. What I usually do is set my dev env variables in `config/set-dev-variables.sh` and then run the script via source `config/set-dev-variables.sh` before running the below to have it run under the specified config variables. Check the <a href='https://github.ibm.com/PlanningAnalytics/paw-ui-api/blob/master/server/modules/config/config.service.ts'>config service</a> to see all available settings.
+
+## Testing the application
+
+```shell
+# unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
+```
+
+Use these commands to test the application.
