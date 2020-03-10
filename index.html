@@ -239,10 +239,7 @@
                     <a href="#planning-analytics-workspace-views" class="toc-h2 toc-link" data-title="Planning Analytics Workspace views">Planning Analytics Workspace views</a>
                   </li>
                   <li>
-                    <a href="#tm1-legacy-views" class="toc-h2 toc-link" data-title="TM1 Legacy views">TM1 Legacy views</a>
-                  </li>
-                  <li>
-                    <a href="#drill-through-views" class="toc-h2 toc-link" data-title="Drill through views">Drill through views</a>
+                    <a href="#tm1-legacy-iews" class="toc-h2 toc-link" data-title="TM1 Legacy iews">TM1 Legacy iews</a>
                   </li>
                   <li>
                     <a href="#dimension-editor" class="toc-h2 toc-link" data-title="Dimension editor">Dimension editor</a>
@@ -280,7 +277,8 @@
 
 <p>The Planning Analytics Workspace UI API is developed and built using the <a href='https://github.com/nestjs/nest'>Nest</a> framework.</p>
 
-<p> </p>
+<p>Some code examples contain <code>&lt;production url&gt;</code>. If you are using these code examples, be sure to replace <code>&lt;production url&gt;</code> with your own production URL.
+ </p>
 <h1 id='showing-a-widget'>Showing a widget</h1>
 <p>You can use an endpoint to return an HTML page that renders a Planning Analytics Workspace book, a Planning Analytics Workspace view, a TM1 legacy view, a drill through view, a dimension editor, a set editor, or a websheet.</p>
 <h2 id='syntax'>Syntax</h2>
@@ -391,11 +389,11 @@ All parameters are case sensitive.
 <tr>
 <td>toolbar</td>
 <td>No</td>
-<td>See General Cube View section below for more detail.</td>
+<td>See the TM1 Legacy views section below for more detail.</td>
 <td>- <code>toolbar=all</code> <br> <img width=400/></td>
 </tr>
 </tbody></table>
-<h2 id='tm1-legacy-views'>TM1 Legacy views</h2>
+<h2 id='tm1-legacy-iews'>TM1 Legacy iews</h2>
 <blockquote>
 <p>Example:</p>
 </blockquote>
@@ -448,59 +446,35 @@ All parameters are case sensitive.
 <td>- <code>toolbar=all</code> <br> - <code>toolbar=suppressZero,sandbox,refresh,save</code> <br> <img width=400/></td>
 </tr>
 </tbody></table>
-<h2 id='drill-through-views'>Drill through views</h2>
-<blockquote>
-<p>Example:</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span>drill-through&amp;server<span class="o">=</span>Planning%20Sample&amp;dtCube<span class="o">=</span>plan_BudgetPlan&amp;dtType<span class="o">=</span>Cube&amp;dtScript<span class="o">=</span>Budget_line_entry&amp;dtCellCoord<span class="o">=</span>FY%202004%20Budget,Total%20Business%20Unit,Total%20Organization,Sales,local%20exchange%20rate,Account%20Level%20Input,Q1-2004
-</code></pre>
-<p>The following parameters apply to <code>type=drill-through</code>.</p>
 
-<table><thead>
-<tr>
-<th>Parameter name</th>
-<th>Required</th>
-<th>Description</th>
-<th>Examples</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>type</td>
-<td>Yes</td>
-<td>The type of widget to render (alias <code>Type</code>).</td>
-<td>- <code>type=drill-through</code></td>
-</tr>
-<tr>
-<td>server</td>
-<td>Yes</td>
-<td>Name of TM1 server where cube is located</td>
-<td>- <code>server=SData</code> <br> - <code>server=Planning%20Sample</code></td>
-</tr>
-<tr>
-<td>dtCube</td>
-<td>Yes</td>
-<td>Name of the cube to drill through. This cube must exist inside the specified <code>server</code>.</td>
-<td>- <code>cube=Input%20Cube</code> <br> - <code>cube=plan_BudgetPlan</code></td>
-</tr>
-<tr>
-<td>dtType</td>
-<td>Yes</td>
-<td>The drill through type.</td>
-<td>- <code>dtType=Cube</code></td>
-</tr>
-<tr>
-<td>dtScript</td>
-<td>Yes</td>
-<td>Name of the drill through script.</td>
-<td>- <code>dtScript=Budget_line_entry</code></td>
-</tr>
-<tr>
-<td>dtCellCoord</td>
-<td>Yes</td>
-<td>A comma separated list of target cells.</td>
-<td>- <code>dtCellCoord=Total%20Business%20Unit%2CTotal%20Organization</code> <br> (Decodes to <code>Total Business Unit,Total Organization</code>.) <br> <img width=500/></td>
-</tr>
-</tbody></table>
+<!--
+## Drill through views
+-->
+
+<!--
+> Example:
+-->
+
+<!--
+```shell
+<production url>/ui?type=drill-through&server=Planning%20Sample&dtCube=plan_BudgetPlan&dtType=Cube&dtScript=Budget_line_entry&dtCellCoord=FY%202004%20Budget,Total%20Business%20Unit,Total%20Organization,Sales,local%20exchange%20rate,Account%20Level%20Input,Q1-2004
+```
+-->
+
+<!--
+The following parameters apply to `type=drill-through`.
+-->
+
+<!--
+Parameter name | Required | Description | Examples
+---------- | ------- | ------- | ------- |
+type | Yes | The type of widget to render (alias `Type`). | - `type=drill-through`
+server | Yes | Name of TM1 server where cube is located| - `server=SData` <br> - `server=Planning%20Sample`
+dtCube | Yes | Name of the cube to drill through. This cube must exist inside the specified `server`. | - `cube=Input%20Cube` <br> - `cube=plan_BudgetPlan`
+dtType | Yes | The drill through type. | - `dtType=Cube`
+dtScript | Yes | Name of the drill through script. | - `dtScript=Budget_line_entry`
+dtCellCoord | Yes | A comma separated list of target cells. | - `dtCellCoord=Total%20Business%20Unit%2CTotal%20Organization` <br> (Decodes to `Total Business Unit,Total Organization`.) <br> <img width=500/>
+-->
 <h2 id='dimension-editor'>Dimension editor</h2>
 <blockquote>
 <p>Example:</p>
@@ -625,7 +599,9 @@ All parameters are case sensitive.
 </blockquote>
 <pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span>websheet&amp;Action<span class="o">=</span>Open&amp;Type<span class="o">=</span>WebSheet&amp;Workbook<span class="o">=</span>Applications/Planning%20Sample/Management%20Reporting/Actual%20v%20Budget&amp;AdminHost<span class="o">=</span>localhost&amp;TM1Server<span class="o">=</span>Planning%20Sample
 </code></pre>
-<p>The following parameters apply to <code>type=websheet</code>. Currently, none of the parameters passed in are changed. The parameters are simply copied when it redirects to the TM1Web URL API to render a websheet.</p>
+<p>The TM1 Web URL API parameters apply to <code>type=websheet</code>. Currently, none of the parameters passed in are changed. The parameters are simply copied when it redirects to the TM1Web URL API to render a websheet.</p>
+
+<p>For more information, see <a href ='https://www.ibm.com/support/knowledgecenter/SSD29G_2.0.0/com.ibm.swg.ba.cognos.tm1_ug.2.0.0.doc/c_tm1webjv_urlapi_section.html'>TM1 Web URL API</a></p>
 <h1 id='client-communication'>Client communication</h1>
 <p>You can safely enable cross-origin communication between the parent dom (the &quot;client&quot;) and the child dom containing the IBM Planning Analytics Workspace UI widget. Communication between the client and the child dom is required in order for the client to be able to issue commands or respond to specific Planning Analytics Workspace UI widget events.</p>
 
@@ -636,8 +612,6 @@ You can embed the Planning Analytics Workspace UI API in an iframe for Planning 
 </aside>
 
 <p>Sending and receiving messages from the client are accomplished using the <code>Window.postMessage</code> API. <a href='https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage'>See this link for more information</a>.</p>
-
-<p>In the code examples below, replace <code>&lt;production url&gt;</code> with your own production URL.</p>
 <h1 id='sending-messages'>Sending messages</h1>
 <blockquote>
 <p>Examples:</p>
