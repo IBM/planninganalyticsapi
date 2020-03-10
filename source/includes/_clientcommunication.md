@@ -10,8 +10,6 @@ You can embed the Planning Analytics Workspace UI API in an iframe for Planning 
 
 Sending and receiving messages from the client are accomplished using the `Window.postMessage` API. <a href='https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage'>See this link for more information</a>.
 
-In the code examples below, replace `<production url>` with your own production URL.
-
 # Sending messages
 
 > Examples:

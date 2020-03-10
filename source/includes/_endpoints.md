@@ -70,9 +70,9 @@ type | Yes | The type of widget to render (alias `Type`). | - `type=cube-viewer`
 path | Yes | The absolute location of the asset| - `path=/shared/myView` <br> - `path=/shared/path/to/my/view/myView`
 server | No | Overrides which TM1 server the view is located in. You can use this parameter if you have multiple TM1 servers with the same cube view; if you have a Planning Analytics Workspace view for one TM1 server, but want to use another TM1 server, you can use the `server` parameter to define which server to use.
 | - `server=Planning_Sample2`
-toolbar | No | See General Cube View section below for more detail. | - `toolbar=all` <br> <img width=400/>
+toolbar | No | See the TM1 Legacy views section below for more detail. | - `toolbar=all` <br> <img width=400/>
 
-## TM1 Legacy views
+## TM1 Legacy iews
 
 > Example:
 
@@ -91,17 +91,22 @@ view | No | Name of the view. This view must exist inside the specified `cube`. 
 private | No | Defines whether or not the view is private. Can be either `true` or `false`. The default is `false`. | - `private=true` <br> - `private=false`
 toolbar | No | A comma delimited string of action names to display in the toolbar. The `all` preset denotes all actions. The default is `all` if this parameter is not defined. Supported actions are as follows: <br>    - `export` <br>    - `save` <br>    - `swapAxes` <br>    - `suppressZero` <br>    - `refresh` <br>    - `sandbox` <br>    - `toggleOverview` <br> The order that the actions are shown in the toolbar is the same order defined in this parameter. | - `toolbar=all` <br> - `toolbar=suppressZero,sandbox,refresh,save` <br> <img width=400/>
 
-
+<!--
 ## Drill through views
-
+-->
+<!--
 > Example:
-
+-->
+<!--
 ```shell
 <production url>/ui?type=drill-through&server=Planning%20Sample&dtCube=plan_BudgetPlan&dtType=Cube&dtScript=Budget_line_entry&dtCellCoord=FY%202004%20Budget,Total%20Business%20Unit,Total%20Organization,Sales,local%20exchange%20rate,Account%20Level%20Input,Q1-2004
 ```
-
+-->
+<!--
 The following parameters apply to `type=drill-through`.
+-->
 
+<!--
 Parameter name | Required | Description | Examples
 ---------- | ------- | ------- | ------- |
 type | Yes | The type of widget to render (alias `Type`). | - `type=drill-through`
@@ -110,6 +115,7 @@ dtCube | Yes | Name of the cube to drill through. This cube must exist inside th
 dtType | Yes | The drill through type. | - `dtType=Cube`
 dtScript | Yes | Name of the drill through script. | - `dtScript=Budget_line_entry`
 dtCellCoord | Yes | A comma separated list of target cells. | - `dtCellCoord=Total%20Business%20Unit%2CTotal%20Organization` <br> (Decodes to `Total Business Unit,Total Organization`.) <br> <img width=500/>
+-->
 
 ## Dimension editor
 
@@ -159,4 +165,6 @@ private | No | Defines whether or not the set or subset is private. Can be eithe
 <production url>/ui?type=websheet&Action=Open&Type=WebSheet&Workbook=Applications/Planning%20Sample/Management%20Reporting/Actual%20v%20Budget&AdminHost=localhost&TM1Server=Planning%20Sample
 ```
 
-The following parameters apply to `type=websheet`. Currently, none of the parameters passed in are changed. The parameters are simply copied when it redirects to the TM1Web URL API to render a websheet.
+The TM1 Web URL API parameters apply to `type=websheet`. Currently, none of the parameters passed in are changed. The parameters are simply copied when it redirects to the TM1Web URL API to render a websheet.
+
+For more information, see <a href ='https://www.ibm.com/support/knowledgecenter/SSD29G_2.0.0/com.ibm.swg.ba.cognos.tm1_ug.2.0.0.doc/c_tm1webjv_urlapi_section.html'>TM1 Web URL API</a>
