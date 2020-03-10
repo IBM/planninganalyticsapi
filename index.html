@@ -1,0 +1,948 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>IBM Planning Analytics Workspace UI API</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen-fa2755b2.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-c5541673.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-182a7533.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#showing-a-widget" class="toc-h1 toc-link" data-title="Showing a widget">Showing a widget</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#syntax" class="toc-h2 toc-link" data-title="Syntax">Syntax</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#parameters" class="toc-h1 toc-link" data-title="Parameters">Parameters</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#planning-analytics-workspace-books" class="toc-h2 toc-link" data-title="Planning Analytics Workspace books">Planning Analytics Workspace books</a>
+                  </li>
+                  <li>
+                    <a href="#planning-analytics-workspace-views" class="toc-h2 toc-link" data-title="Planning Analytics Workspace views">Planning Analytics Workspace views</a>
+                  </li>
+                  <li>
+                    <a href="#tm1-legacy-views" class="toc-h2 toc-link" data-title="TM1 Legacy views">TM1 Legacy views</a>
+                  </li>
+                  <li>
+                    <a href="#drill-through-views" class="toc-h2 toc-link" data-title="Drill through views">Drill through views</a>
+                  </li>
+                  <li>
+                    <a href="#dimension-editor" class="toc-h2 toc-link" data-title="Dimension editor">Dimension editor</a>
+                  </li>
+                  <li>
+                    <a href="#set-editor" class="toc-h2 toc-link" data-title="Set editor">Set editor</a>
+                  </li>
+                  <li>
+                    <a href="#websheet" class="toc-h2 toc-link" data-title="Websheet">Websheet</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#client-communication" class="toc-h1 toc-link" data-title="Client communication">Client communication</a>
+          </li>
+          <li>
+            <a href="#sending-messages" class="toc-h1 toc-link" data-title="Sending messages">Sending messages</a>
+          </li>
+          <li>
+            <a href="#receiving-messages" class="toc-h1 toc-link" data-title="Receiving messages">Receiving messages</a>
+          </li>
+          <li>
+            <a href="#html-sample" class="toc-h1 toc-link" data-title="HTML sample">HTML sample</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://www.ibm.com/support/knowledgecenter/SSD29G_2.0.0/com.ibm.swg.ba.cognos.tm1_prism_gs.2.0.0.doc/pa_paw.html'>Planning Analytics Workspace documentation</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Use the IBM Planning Analytics Workspace UI API to return generated Planning Analytics Workspace assets. You can return assets such as cube views, the dimension editor, the set editor, and TM1 views.</p>
+
+<p>The Planning Analytics Workspace UI API is developed and built using the <a href='https://github.com/nestjs/nest'>Nest</a> framework.</p>
+
+<p> </p>
+<h1 id='showing-a-widget'>Showing a widget</h1>
+<p>You can use an endpoint to return an HTML page that renders a Planning Analytics Workspace book, a Planning Analytics Workspace view, a TM1 legacy view, a drill through view, a dimension editor, a set editor, or a websheet.</p>
+<h2 id='syntax'>Syntax</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span>cube-viewer&amp;server<span class="o">=</span>Planning%20Sample&amp;cube<span class="o">=</span>plan_BudgetPlan&amp;view<span class="o">=</span>Budget%20Input%20Detailed
+</code></pre>
+<p>Method: <code>GET</code></p>
+
+<p>URL Format: <code>/?p1=a1&amp;p2=a2&amp;...#f1=a3&amp;f2=a4&amp;...</code></p>
+
+<p>Query parameters: <code>?p1=a1&amp;p2=a2&amp;...</code></p>
+
+<p>Fragment parameters: <code>#f1=a3&amp;f2=a4&amp;...</code></p>
+
+<p>You have flexibility when it comes to how you want to structure your requests. All parameters can be passed as either a query or a fragment parameter. Queries and fragment parameters are processed in the same way. </p>
+
+<p>The following requests are all equivalent:</p>
+
+<ul>
+<li><code>/?type=cube-viewer&amp;server=Planning%20Sample&amp;cube=plan_BudgetPlan</code></li>
+<li><code>/#type=cube-viewer&amp;server=Planning%20Sample&amp;cube=plan_BudgetPlan</code></li>
+<li><code>/?type=cube-viewer#server=Planning%20Sample&amp;cube=plan_BudgetPlan</code></li>
+</ul>
+
+<p>All of the above requests will return the following:</p>
+
+<ul>
+<li><code>200 OK</code> on success. </li>
+<li>A response body containing an HTML page that can be put into an iframe. The HTML page will automatically load the requested widget.</li>
+</ul>
+<h1 id='parameters'>Parameters</h1>
+<p>The <code>type</code> parameter (alias <code>Type</code>) determines which type of widget or asset to render. Each widget/asset type requires a different set of parameters. Below are the widgets/assets that you can return and the parameters associated with each.</p>
+
+<aside class="notice">
+All parameters are case sensitive.
+</aside>
+<h2 id='planning-analytics-workspace-books'>Planning Analytics Workspace books</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span>book&amp;path<span class="o">=</span>/shared/myBook1
+</code></pre>
+<p>The follow parameters apply to <code>type=book</code>.</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Required</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>The type of widget to render (alias <code>Type</code>).</td>
+<td>- <code>type=book</code></td>
+</tr>
+<tr>
+<td>path</td>
+<td>Yes</td>
+<td>The absolute location of the asset</td>
+<td>- <code>path=/shared/myBook</code> <br> - <code>path=/shared/path/to/my/book/myBook</code> <br> - <code>path=/personal/path/to/my/book/myBook</code></td>
+</tr>
+</tbody></table>
+<h2 id='planning-analytics-workspace-views'>Planning Analytics Workspace views</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span>cube-viewer&amp;server<span class="o">=</span>Planning%20Sample&amp;cube<span class="o">=</span>plan_BudgetPlan&amp;view<span class="o">=</span>Budget%20Input%20Detailed
+</code></pre>
+<p>The follow parameters apply to <code>type=cube-viewer</code> when <code>path</code> is defined.</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Required</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>The type of widget to render (alias <code>Type</code>).</td>
+<td>- <code>type=cube-viewer</code></td>
+</tr>
+<tr>
+<td>path</td>
+<td>Yes</td>
+<td>The absolute location of the asset</td>
+<td>- <code>path=/shared/myView</code> <br> - <code>path=/shared/path/to/my/view/myView</code></td>
+</tr>
+<tr>
+<td>server</td>
+<td>No</td>
+<td>Overrides which TM1 server the view is located in. You can use this parameter if you have multiple TM1 servers with the same cube view; if you have a Planning Analytics Workspace view for one TM1 server, but want to use another TM1 server, you can use the <code>server</code> parameter to define which server to use.</td>
+<td></td>
+</tr>
+<tr>
+<td>- <code>server=Planning_Sample2</code></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>toolbar</td>
+<td>No</td>
+<td>See General Cube View section below for more detail.</td>
+<td>- <code>toolbar=all</code> <br> <img width=400/></td>
+</tr>
+</tbody></table>
+<h2 id='tm1-legacy-views'>TM1 Legacy views</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span>cube-viewer&amp;path<span class="o">=</span>/shared/ABC/KamView
+</code></pre>
+<p>The following parameters apply to <code>type=cube-viewer</code> when <code>path</code> is defined.</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Required</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>The type of widget to render (alias <code>Type</code>).</td>
+<td>- <code>type=cube-viewer</code></td>
+</tr>
+<tr>
+<td>server</td>
+<td>Yes</td>
+<td>Name of TM1 server where the view is located.</td>
+<td>- <code>server=SData</code> <br> - <code>server=Planning%20Sample</code></td>
+</tr>
+<tr>
+<td>cube</td>
+<td>Yes</td>
+<td>Name of cube where view is located. This cube must exist inside the specified <code>server</code>.</td>
+<td>- <code>cube=Input%20Cube</code> <br> - <code>cube=plan_BudgetPlan</code></td>
+</tr>
+<tr>
+<td>view</td>
+<td>No</td>
+<td>Name of the view. This view must exist inside the specified <code>cube</code>. The default view is used if <code>view</code> is not defined.</td>
+<td>- <code>view=CPView</code> <br> - <code>view=Budget%20Input%20Detailed</code></td>
+</tr>
+<tr>
+<td>private</td>
+<td>No</td>
+<td>Defines whether or not the view is private. Can be either <code>true</code> or <code>false</code>. The default is <code>false</code>.</td>
+<td>- <code>private=true</code> <br> - <code>private=false</code></td>
+</tr>
+<tr>
+<td>toolbar</td>
+<td>No</td>
+<td>A comma delimited string of action names to display in the toolbar. The <code>all</code> preset denotes all actions. The default is <code>all</code> if this parameter is not defined. Supported actions are as follows: <br>    - <code>export</code> <br>    - <code>save</code> <br>    - <code>swapAxes</code> <br>    - <code>suppressZero</code> <br>    - <code>refresh</code> <br>    - <code>sandbox</code> <br>    - <code>toggleOverview</code> <br> The order that the actions are shown in the toolbar is the same order defined in this parameter.</td>
+<td>- <code>toolbar=all</code> <br> - <code>toolbar=suppressZero,sandbox,refresh,save</code> <br> <img width=400/></td>
+</tr>
+</tbody></table>
+<h2 id='drill-through-views'>Drill through views</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span>drill-through&amp;server<span class="o">=</span>Planning%20Sample&amp;dtCube<span class="o">=</span>plan_BudgetPlan&amp;dtType<span class="o">=</span>Cube&amp;dtScript<span class="o">=</span>Budget_line_entry&amp;dtCellCoord<span class="o">=</span>FY%202004%20Budget,Total%20Business%20Unit,Total%20Organization,Sales,local%20exchange%20rate,Account%20Level%20Input,Q1-2004
+</code></pre>
+<p>The following parameters apply to <code>type=drill-through</code>.</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Required</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>The type of widget to render (alias <code>Type</code>).</td>
+<td>- <code>type=drill-through</code></td>
+</tr>
+<tr>
+<td>server</td>
+<td>Yes</td>
+<td>Name of TM1 server where cube is located</td>
+<td>- <code>server=SData</code> <br> - <code>server=Planning%20Sample</code></td>
+</tr>
+<tr>
+<td>dtCube</td>
+<td>Yes</td>
+<td>Name of the cube to drill through. This cube must exist inside the specified <code>server</code>.</td>
+<td>- <code>cube=Input%20Cube</code> <br> - <code>cube=plan_BudgetPlan</code></td>
+</tr>
+<tr>
+<td>dtType</td>
+<td>Yes</td>
+<td>The drill through type.</td>
+<td>- <code>dtType=Cube</code></td>
+</tr>
+<tr>
+<td>dtScript</td>
+<td>Yes</td>
+<td>Name of the drill through script.</td>
+<td>- <code>dtScript=Budget_line_entry</code></td>
+</tr>
+<tr>
+<td>dtCellCoord</td>
+<td>Yes</td>
+<td>A comma separated list of target cells.</td>
+<td>- <code>dtCellCoord=Total%20Business%20Unit%2CTotal%20Organization</code> <br> (Decodes to <code>Total Business Unit,Total Organization</code>.) <br> <img width=500/></td>
+</tr>
+</tbody></table>
+<h2 id='dimension-editor'>Dimension editor</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span>dimension-editor&amp;server<span class="o">=</span>Planning%20Sample&amp;dimension<span class="o">=</span>plan_business_unit&amp;hierarchy<span class="o">=</span>plan_business_unit
+</code></pre>
+<p>The following parameters apply to <code>type=dimension-editor</code>.</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Required</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>The type of widget to render (alias <code>Type</code>).</td>
+<td>- <code>type=dimension-editor</code></td>
+</tr>
+<tr>
+<td>server</td>
+<td>Yes</td>
+<td>Name of TM1 server where dimension is located.</td>
+<td>- <code>server=SData</code> <br> - <code>server=Planning%20Sample</code></td>
+</tr>
+<tr>
+<td>dimension</td>
+<td>Yes</td>
+<td>Name of the dimension. This dimension must exist inside the specified <code>server</code>.</td>
+<td>- <code>dimension=region</code> <br> - <code>dimension=plan_version</code></td>
+</tr>
+<tr>
+<td>hierarchy</td>
+<td>No</td>
+<td>Name of the hierarchy of the specified <code>dimension</code>. This hierarchy must exist inside the specified <code>dimension</code>. If not defined, it will default to the same value as <code>dimension</code>.</td>
+<td>- <code>hierarchy=ManufacturingSource</code> <br> - <code>hierarchy=plan_version</code> <br> <img width=400/></td>
+</tr>
+</tbody></table>
+<h2 id='set-editor'>Set editor</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span><span class="nb">set</span>-editor&amp;server<span class="o">=</span>Planning%20Sample&amp;dimension<span class="o">=</span>plan_business_unit&amp;hierarchy<span class="o">=</span>plan_business_unit&amp;uniqueName<span class="o">=</span>All%20Business%20Units
+</code></pre>
+<p>The following parameters apply to <code>type=set-editor</code>.</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Required</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>The type of widget to render (alias <code>Type</code>).</td>
+<td>- <code>type=set-editor</code></td>
+</tr>
+<tr>
+<td>server</td>
+<td>Yes</td>
+<td>Name of the TM1 server where the set or subset is located.</td>
+<td>- <code>server=SData</code> <br> - <code>server=Planning%20Sample</code></td>
+</tr>
+<tr>
+<td>cube</td>
+<td>Yes</td>
+<td>Name of the cube where view is located. This cube must exist inside the specified <code>server</code>.</td>
+<td>- <code>cube=Input%20Cube</code> <br> - <code>cube=plan_BudgetPlan</code></td>
+</tr>
+<tr>
+<td>dimension</td>
+<td>Yes</td>
+<td>Name of the dimension. This dimension must exist inside the specified <code>server</code>.</td>
+<td>- <code>dimension=region</code> <br> - <code>dimension=plan_version</code></td>
+</tr>
+<tr>
+<td>uniqueName</td>
+<td>Yes</td>
+<td>Unique ID of the set or subset.</td>
+<td>- <code>uniqueName=Europe_all</code> <br> - <code>uniqueName=FY%202004%20Budget</code></td>
+</tr>
+<tr>
+<td>dimensionCaption</td>
+<td>No</td>
+<td>Caption name of the specified <code>dimension</code> (if applicable).</td>
+<td></td>
+</tr>
+<tr>
+<td>hierarchy</td>
+<td>No</td>
+<td>Name of the hierarchy of the specified <code>dimension</code>. This hierarchy must exist inside the specified <code>dimension</code>. If not defined, it will default to the same value as <code>dimension</code>.</td>
+<td>- <code>hierarchy=ManufacturingSource</code> <br> - <code>hierarchy=plan_version</code></td>
+</tr>
+<tr>
+<td>hierarchyCaption</td>
+<td>No</td>
+<td>Caption name for the specified <code>dimension</code> (if applicable).</td>
+<td></td>
+</tr>
+<tr>
+<td>alias</td>
+<td>No</td>
+<td>The alias name for the set or subset (if applicable).</td>
+<td></td>
+</tr>
+<tr>
+<td>private</td>
+<td>No</td>
+<td>Defines whether or not the set or subset is private. Can be either <code>true</code> or <code>false</code>. The default is <code>false</code>.</td>
+<td>- <code>private=true</code> <br> - <code>private=false</code> <img width=400/></td>
+</tr>
+</tbody></table>
+<h2 id='websheet'>Websheet</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span>websheet&amp;Action<span class="o">=</span>Open&amp;Type<span class="o">=</span>WebSheet&amp;Workbook<span class="o">=</span>Applications/Planning%20Sample/Management%20Reporting/Actual%20v%20Budget&amp;AdminHost<span class="o">=</span>localhost&amp;TM1Server<span class="o">=</span>Planning%20Sample
+</code></pre>
+<p>The following parameters apply to <code>type=websheet</code>. Currently, none of the parameters passed in are changed. The parameters are simply copied when it redirects to the TM1Web URL API to render a websheet.</p>
+<h1 id='client-communication'>Client communication</h1>
+<p>You can safely enable cross-origin communication between the parent dom (the &quot;client&quot;) and the child dom containing the IBM Planning Analytics Workspace UI widget. Communication between the client and the child dom is required in order for the client to be able to issue commands or respond to specific Planning Analytics Workspace UI widget events.</p>
+
+<p>The Planning Analytics Workspace UI widgets are usually contained inside of an iframe. The approach documented in this section is safe for same-origin and cross-origin communication.</p>
+
+<aside class="notice">
+You can embed the Planning Analytics Workspace UI API in an iframe for Planning Analytics Workspace Local, but you cannot embed the API in an iframe for Planning Analytics Workspace on Cloud. To embed the Planning Analytics Workspace UI API in an iframe for Planning Analytics Workspace Local, you must enable CORS. For more information on how you can enable CORS for Planning Analytics Workspace Local, see <a href='https://www-03preprod.ibm.com/support/knowledgecenter/SSD29G_2.0.0_test/com.ibm.swg.ba.cognos.tm1_inst.2.0.0.doc/c_paw_config_file.html'>Configure parameters</a>.
+</aside>
+
+<p>Sending and receiving messages from the client are accomplished using the <code>Window.postMessage</code> API. <a href='https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage'>See this link for more information</a>.</p>
+
+<p>In the code examples below, replace <code>&lt;production url&gt;</code> with your own production URL.</p>
+<h1 id='sending-messages'>Sending messages</h1>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>var iframe <span class="o">=</span> document.getElementByd<span class="o">(</span><span class="s1">'iframe_id_here'</span><span class="o">)</span>;
+// check <span class="k">if </span>widget is fully loaded before sending message
+// isWidgetReady is <span class="nb">set </span>to <span class="nb">true </span>when client receives the <span class="s2">"onWidgetLoaded"</span> message
+<span class="k">if</span><span class="o">(</span>isWidgetReady <span class="o">&amp;&amp;</span> iframe.contentWindow<span class="o">)</span> <span class="o">{</span>
+    iframe.contentWindow.postMessage<span class="o">({</span>
+        <span class="nb">type</span>: <span class="s2">"execute"</span>,
+        eventName: <span class="s2">"Compute"</span>,
+        eventPayload: <span class="o">{}</span>
+    <span class="o">}</span>, <span class="s2">"&lt;production url&gt;"</span><span class="o">)</span>;
+<span class="o">}</span>
+</code></pre>
+<blockquote>
+<p>Subscribes to the tm1mdv:executeCommand event. Once subscribed, the client will receive messages whenever that event occurs</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>iframe.contentWindow.postMessage<span class="o">({</span>
+    <span class="nb">type</span>: <span class="s2">"subscribe"</span>,
+    eventName: <span class="s2">"tm1mdv:executeCommand"</span>,
+    eventPayload: <span class="o">{</span>
+        name: <span class="s2">"first subscription"</span>
+    <span class="o">}</span>
+<span class="o">}</span>, <span class="s2">"&lt;production url&gt;"</span><span class="o">)</span>;
+</code></pre>
+<blockquote>
+<p>Unsubscribes to the event above.</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>iframe.contentWindow.postMessage<span class="o">({</span>
+    <span class="nb">type</span>: <span class="s2">"unsubscribe"</span>,
+    eventName: <span class="s2">"tm1mdv:executeCommand"</span>,
+    eventPayload: <span class="o">{</span>
+        name: <span class="s2">"first subscription"</span>
+    <span class="o">}</span>
+<span class="o">}</span>, <span class="s2">"&lt;production url&gt;"</span><span class="o">)</span>;
+</code></pre>
+<blockquote>
+<p>Triggers an redraw event.</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>iframe.contentWindow.postMessage<span class="o">({</span>
+    <span class="nb">type</span>: <span class="s1">'trigger'</span>,
+    eventName: <span class="s1">'tm1mdv:redraw'</span>
+<span class="o">}</span>, apiOrigin<span class="o">)</span>;
+</code></pre>
+<p>The following is a list of parameters that can be passed in:</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Required</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>The type of message to send.</td>
+<td>- <code>trigger</code> <br> - <code>subscribe</code> <br> - <code>unsubscribe</code> <br> - <code>execute</code></td>
+</tr>
+<tr>
+<td>eventName</td>
+<td>Yes</td>
+<td>The full name of the event.</td>
+<td>- <code>tm1mdv:executeCommand</code> <br> - <code>tm1mdv:memberSelect</code> <br> - <code>Compute</code></td>
+</tr>
+<tr>
+<td>eventPayload</td>
+<td>n/a</td>
+<td>The payload body accompanying the message. The content and whether or not this parameter is required depends on the type of message. This must be an object in the following format: <code>{ k1: v1, k2: v2, ..., kn: vn }</code></td>
+<td>- <code>{ name: &#39;myEventNickname&#39; }</code> <br> - <code>{ selectedSet: &#39;Default&#39; }</code> <img width=500/></td>
+</tr>
+</tbody></table>
+
+<p>The following is a list of all the supported messages that the client can send:</p>
+
+<table><thead>
+<tr>
+<th>Message type</th>
+<th>Description</th>
+<th>eventPayload</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>trigger</td>
+<td>Attempts to raise a particular event. The widget may or may not respond, depending on whether or not it is listening for this event name.</td>
+<td>Depends on the event. This would contain information needed for the event execution.</td>
+</tr>
+<tr>
+<td>execute</td>
+<td>Attempts to execute a command on the widget. This is an alias to the <code>trigger</code> message type and is provided as a convenience. This is equivalent to sending <code>type=trigger</code> and <code>eventPayload={commandName: &lt;command_name&gt;, commandArgs: { ... }}</code>.</td>
+<td>Depends on the command. This would contain information needed to successfully execute the command.</td>
+</tr>
+<tr>
+<td>subscribe</td>
+<td>Subscribes to a particular event. Once subscribed, the widget will send an <code>on</code> message back to the client every time the <code>eventName</code> event occurs.</td>
+<td><code>name</code>: String (Required). Used to identify subscriptions. <br> - If the given name has already been registered, nothing happens.</td>
+</tr>
+<tr>
+<td>unsubscribe</td>
+<td>Unsubscribes to a particular event. Only subscriptions with a name can be unsubscribed.</td>
+<td><code>name</code>: String (Required). Used to identify subscriptions.  <br> - If no name is given or if there were no previous subscriptions under that name, nothing happens. <img width=500/></td>
+</tr>
+</tbody></table>
+<h1 id='receiving-messages'>Receiving messages</h1>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>var widgetReady <span class="o">=</span> <span class="nb">false</span>;
+window.addEventListener<span class="o">(</span><span class="s2">"message"</span>, <span class="k">function</span><span class="o">(</span>event<span class="o">)</span> <span class="o">{</span>
+    // only accept messages sent from the UI widget
+    <span class="k">if</span><span class="o">(</span>event.origin <span class="o">==</span> <span class="s2">"&lt;production url&gt;"</span><span class="o">)</span> <span class="o">{</span>
+        switch<span class="o">(</span>event.data.type<span class="o">)</span> <span class="o">{</span>
+            <span class="k">case</span> <span class="s1">'onWidgetLoaded'</span>:
+                widgetReady <span class="o">=</span> <span class="nb">true</span>;
+                <span class="nb">break</span>;
+            <span class="k">case</span> <span class="s1">'on'</span>:
+                handleEvent<span class="o">(</span>event.data.eventName, event.data.eventPayload<span class="p">)</span>;
+                <span class="nb">break</span>;
+            default:
+                <span class="nb">break</span>;
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">})</span>;
+</code></pre>
+<blockquote>
+<p>Receiving an <code>on</code> message that indicated that the <code>tm1mdv:executeCommand</code> event had occured</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="k">function </span>handleEvent<span class="o">(</span>eventName, eventPayload<span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span><span class="o">(</span>eventName <span class="o">==</span> <span class="s2">"tm1mdv:executeCommand"</span><span class="o">)</span> <span class="o">{</span>
+        // first subscription was just notified!
+        alert<span class="o">(</span>eventPayload.name + <span class="s1">' was just notified!'</span><span class="o">)</span>;
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+<p>You can find the specifications for the <code>event</code> object in the <code>Window.postMessage</code> API. </p>
+
+<p>The following is a list of parameters under the <code>event.data</code> object:</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Required</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>The type of message recieved.</td>
+<td>- <code>onWidgetLoaded</code> <br> - <code>on</code></td>
+</tr>
+<tr>
+<td>eventName</td>
+<td>Yes</td>
+<td>The full name of the event.</td>
+<td>- <code>tm1mdv:executeCommand</code> <br> - <code>tm1mdv:redraw</code> <br> - <code>tm1mdv:memberSelect</code></td>
+</tr>
+<tr>
+<td>eventPayload</td>
+<td>n/a</td>
+<td>The payload body accompanying the message. The contents depends on the type of message. All payloads contain a <code>name</code> and <code>parentStore</code> properties.</td>
+<td>- <code>{ name: &#39;first subscription&#39;, parentStore: { ... }, ... }</code>  <img width=500/></td>
+</tr>
+</tbody></table>
+
+<p>The following is a list of all the supported messages that the client can send:</p>
+
+<table><thead>
+<tr>
+<th>Message type</th>
+<th>Description</th>
+<th>eventPayload</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>onWidgetLoaded</td>
+<td>Used to notify to the client that the UI widget has been fully rendered and can safely be interacted with.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>on</td>
+<td>Used to notify to the client that one of their subscribed events has occurred.</td>
+<td>This will contain more information about the context of the event that occurred.</td>
+</tr>
+</tbody></table>
+<h1 id='html-sample'>HTML sample</h1>
+<blockquote>
+</blockquote>
+<pre class="highlight html tab-html"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+        <span class="nc">.vertical</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span> <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span> <span class="p">}</span>
+        <span class="nc">.vertical-fill</span> <span class="p">{</span> <span class="nl">flex-grow</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span> <span class="p">}</span>
+        <span class="nt">div</span><span class="nf">#headerContent</span> <span class="p">{</span> <span class="nl">margin</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span> <span class="p">}</span>
+        <span class="nt">div</span><span class="nf">#headerContent</span> <span class="nt">button</span> <span class="p">{</span> <span class="nl">margin-left</span><span class="p">:</span> <span class="m">20px</span> <span class="p">}</span>
+        <span class="nt">div</span><span class="nf">#widgetContent</span> <span class="nt">iframe</span><span class="nf">#widget</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="kd">var</span> <span class="nx">API_URL</span> <span class="o">=</span> <span class="s1">'&lt;production url&gt;'</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">IS_WIDGET_READY</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">iframe</span><span class="p">;</span>
+
+        <span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'widget'</span><span class="p">);</span>
+            <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'message'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// only accept messages sent from the API service</span>
+                <span class="k">if</span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">origin</span> <span class="o">==</span> <span class="nx">API_URL</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">switch</span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">case</span> <span class="s1">'onWidgetLoaded'</span><span class="p">:</span>
+                            <span class="nx">IS_WIDGET_READY</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+                            <span class="k">break</span><span class="p">;</span>
+                        <span class="k">case</span> <span class="s1">'on'</span><span class="p">:</span>
+                            <span class="nx">handleEvent</span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">eventName</span><span class="p">,</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">eventPayload</span><span class="p">);</span>
+                            <span class="k">break</span><span class="p">;</span>
+                        <span class="nl">default</span><span class="p">:</span>
+                            <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+
+        <span class="kd">function</span> <span class="nx">handleEvent</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">'event "'</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s1">'" had occurred: '</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">payload</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="kd">function</span> <span class="nx">loadIframe</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">API_URL</span> <span class="o">+</span> 
+                        <span class="s1">'/ui/'</span> <span class="o">+</span>
+                        <span class="s1">'?type=cube-viewer'</span> <span class="o">+</span>
+                        <span class="s1">'&amp;server=Planning%20Sample'</span> <span class="o">+</span>
+                        <span class="s1">'&amp;cube=plan_BudgetPlan'</span> <span class="o">+</span>
+                        <span class="s1">'&amp;view=Budget%20Input%20Detailed'</span><span class="p">;</span>
+            <span class="nx">iframe</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">url</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kd">function</span> <span class="nx">isWidgetReady</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">IS_WIDGET_READY</span> <span class="o">&amp;&amp;</span> <span class="nx">iframe</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kd">function</span> <span class="nx">redraw</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">isWidgetReady</span><span class="p">())</span> <span class="p">{</span>
+                <span class="nx">iframe</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span>
+                    <span class="na">type</span><span class="p">:</span> <span class="s1">'trigger'</span><span class="p">,</span>
+                    <span class="na">eventName</span><span class="p">:</span> <span class="s1">'tm1mdv:redraw'</span>
+                <span class="p">},</span> <span class="nx">API_URL</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="kd">function</span> <span class="nx">swapAxes</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">isWidgetReady</span><span class="p">())</span> <span class="p">{</span>
+                <span class="nx">iframe</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span>
+                    <span class="na">type</span><span class="p">:</span> <span class="s1">'execute'</span><span class="p">,</span>
+                    <span class="na">eventName</span><span class="p">:</span> <span class="s1">'SwapAxes'</span>
+                <span class="p">},</span> <span class="nx">API_URL</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="kd">function</span> <span class="nx">subscribe</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">isWidgetReady</span><span class="p">())</span> <span class="p">{</span>
+                <span class="nx">iframe</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span>
+                    <span class="na">type</span><span class="p">:</span> <span class="s1">'subscribe'</span><span class="p">,</span>
+                    <span class="na">eventName</span><span class="p">:</span> <span class="s1">'tm1mdv:executeCommand'</span><span class="p">,</span>
+                    <span class="na">eventPayload</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="na">name</span><span class="p">:</span> <span class="s1">'commandsCompleted'</span>
+                    <span class="p">}</span>
+                <span class="p">},</span> <span class="nx">API_URL</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="kd">function</span> <span class="nx">unsubscribe</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">isWidgetReady</span><span class="p">())</span> <span class="p">{</span>
+                <span class="nx">iframe</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span>
+                    <span class="na">type</span><span class="p">:</span> <span class="s1">'unsubscribe'</span><span class="p">,</span>
+                    <span class="na">eventName</span><span class="p">:</span> <span class="s1">'tm1mdv:executeCommand'</span><span class="p">,</span>
+                    <span class="na">eventPayload</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="na">name</span><span class="p">:</span> <span class="s1">'commandsCompleted'</span>
+                    <span class="p">}</span>
+                <span class="p">},</span> <span class="nx">API_URL</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"headerContent"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"loadIframe()"</span><span class="nt">&gt;</span>Render iframe<span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"redraw()"</span><span class="nt">&gt;</span>Trigger redraw event<span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"swapAxes()"</span><span class="nt">&gt;</span>Execute swap axis<span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"subscribe()"</span><span class="nt">&gt;</span>Subscribe to "tm1mdv:executeCommand"<span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"unsubscribe()"</span><span class="nt">&gt;</span>Unsubscribe to "tm1mdv:executeCommand"<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"widgetContent"</span> <span class="na">class=</span><span class="s">"vertical vertical-fill"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;iframe</span> <span class="na">id=</span><span class="s">"widget"</span> <span class="na">class=</span><span class="s">"vertical-fill"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+<p>This is a sample of an HTML file that uses the IBM Planning Analytics Workspace UI API to create a cube viewer widget in an iframe. In this sample are also full examples of the <code>trigger</code>, <code>execute</code>, <code>subscribe</code>, and <code>unsubscribe</code> events.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
