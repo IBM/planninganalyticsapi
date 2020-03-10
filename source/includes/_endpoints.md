@@ -72,7 +72,7 @@ server | No | Overrides which TM1 server the view is located in. You can use thi
 | - `server=Planning_Sample2`
 toolbar | No | See the TM1 Legacy views section below for more detail. | - `toolbar=all` <br> <img width=400/>
 
-## TM1 Legacy iews
+## TM1 Legacy views
 
 > Example:
 
