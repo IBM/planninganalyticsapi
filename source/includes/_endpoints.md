@@ -6,12 +6,12 @@ You can use an endpoint to return an HTML page that renders a Planning Analytics
 > Example:
 
 ```shell
-<production url>/ui?type=cube-viewer&server=Planning%20Sample&cube=plan_BudgetPlan&view=Budget%20Input%20Detailed
+http(s)://<Planning Analytics Workspace URL>/ui?type=cube-viewer&server=Planning%20Sample&cube=plan_BudgetPlan&view=Budget%20Input%20Detailed
 ```
 
 Method: `GET`
 
-URL Format: `/?p1=a1&p2=a2&...#f1=a3&f2=a4&...`
+URL Format: `/ui?p1=a1&p2=a2&...#f1=a3&f2=a4&...`
 
 Query parameters: `?p1=a1&p2=a2&...`
 
@@ -44,7 +44,7 @@ All parameters are case sensitive.
 > Example:
 
 ```shell
-<production url>/ui?type=book&path=/shared/myBook1
+http(s)://<Planning Analytics Workspace URL>/ui?type=book&path=/shared/myBook1
 ```
 
 The follow parameters apply to `type=book`.
@@ -59,7 +59,7 @@ path | Yes | The absolute location of the asset| - `path=/shared/myBook` <br> - 
 > Example:
 
 ```shell
-<production url>/ui?type=cube-viewer&server=Planning%20Sample&cube=plan_BudgetPlan&view=Budget%20Input%20Detailed
+http(s)://<Planning Analytics Workspace URL>/ui?type=cube-viewer&server=Planning%20Sample&cube=plan_BudgetPlan&view=Budget%20Input%20Detailed
 ```
 
 The follow parameters apply to `type=cube-viewer` when `path` is defined.
@@ -77,7 +77,7 @@ toolbar | No | See the TM1 Legacy views section below for more detail. | - `tool
 > Example:
 
 ```shell
-<production url>/ui?type=cube-viewer&path=/shared/ABC/KamView
+http(s)://<Planning Analytics Workspace URL>/ui?type=cube-viewer&path=/shared/ABC/KamView
 ```
 
 The following parameters apply to `type=cube-viewer` when `path` is defined.
@@ -99,7 +99,7 @@ toolbar | No | A comma delimited string of action names to display in the toolba
 -->
 <!--
 ```shell
-<production url>/ui?type=drill-through&server=Planning%20Sample&dtCube=plan_BudgetPlan&dtType=Cube&dtScript=Budget_line_entry&dtCellCoord=FY%202004%20Budget,Total%20Business%20Unit,Total%20Organization,Sales,local%20exchange%20rate,Account%20Level%20Input,Q1-2004
+http(s)://<Planning Analytics Workspace URL>/ui?type=drill-through&server=Planning%20Sample&dtCube=plan_BudgetPlan&dtType=Cube&dtScript=Budget_line_entry&dtCellCoord=FY%202004%20Budget,Total%20Business%20Unit,Total%20Organization,Sales,local%20exchange%20rate,Account%20Level%20Input,Q1-2004
 ```
 -->
 <!--
@@ -122,7 +122,7 @@ dtCellCoord | Yes | A comma separated list of target cells. | - `dtCellCoord=Tot
 > Example:
 
 ```shell
-<production url>/ui?type=dimension-editor&server=Planning%20Sample&dimension=plan_business_unit&hierarchy=plan_business_unit
+http(s)://<Planning Analytics Workspace URL>/ui?type=dimension-editor&server=Planning%20Sample&dimension=plan_business_unit&hierarchy=plan_business_unit
 ```
 
 The following parameters apply to `type=dimension-editor`.
@@ -139,7 +139,7 @@ hierarchy | No | Name of the hierarchy of the specified `dimension`. This hierar
 > Example:
 
 ```shell
-<production url>/ui?type=set-editor&server=Planning%20Sample&dimension=plan_business_unit&hierarchy=plan_business_unit&uniqueName=All%20Business%20Units
+http(s)://<Planning Analytics Workspace URL>/ui?type=set-editor&server=Planning%20Sample&dimension=plan_business_unit&hierarchy=plan_business_unit&uniqueName=All%20Business%20Units
 ```
 
 The following parameters apply to `type=set-editor`.
@@ -162,7 +162,7 @@ private | No | Defines whether or not the set or subset is private. Can be eithe
 > Example:
 
 ```shell
-<production url>/ui?type=websheet&Action=Open&Type=WebSheet&Workbook=Applications/Planning%20Sample/Management%20Reporting/Actual%20v%20Budget&AdminHost=localhost&TM1Server=Planning%20Sample
+http(s)://<Planning Analytics Workspace URL>//ui?type=websheet&Action=Open&Workbook=Applications/Planning%20Sample/Management%20Reporting/Actual%20v%20Budget&AdminHost=localhost&TM1Server=Planning%20Sample
 ```
 
 The TM1 Web URL API parameters apply to `type=websheet`. Currently, none of the parameters passed in are changed. The parameters are simply copied when it redirects to the TM1Web URL API to render a websheet.

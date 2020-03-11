@@ -142,7 +142,7 @@ on | Used to notify to the client that one of their subscribed events has occurr
 		div#widgetContent iframe#widget { width: 100%; height: 100%; }
 	</style>
 	<script>
-		var API_URL = '<production url>';
+		var API_URL = '<Planning Analytics Workspace URL>';
 		var IS_WIDGET_READY = false;
 		var iframe;
 
