@@ -277,7 +277,7 @@
 
 <p>The Planning Analytics Workspace UI API is developed and built using the <a href='https://github.com/nestjs/nest'>Nest</a> framework.</p>
 
-<p>Some code examples contain <code>&lt;production url&gt;</code>. If you are using these code examples, be sure to replace <code>&lt;production url&gt;</code> with your own production URL.
+<p>Some code examples contain <code>http(s)://&lt;Planning Analytics Workspace URL&gt;</code>. If you are using these code examples, be sure to replace <code>&lt;Planning Analytics Workspace URL&gt;</code> with your own Planning Analytics Workspace URL.
  </p>
 <h1 id='showing-a-widget'>Showing a widget</h1>
 <p>You can use an endpoint to return an HTML page that renders a Planning Analytics Workspace book, a Planning Analytics Workspace view, a TM1 legacy view, a drill through view, a dimension editor, a set editor, or a websheet.</p>
@@ -285,11 +285,11 @@
 <blockquote>
 <p>Example:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span>cube-viewer&amp;server<span class="o">=</span>Planning%20Sample&amp;cube<span class="o">=</span>plan_BudgetPlan&amp;view<span class="o">=</span>Budget%20Input%20Detailed
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/ui?type<span class="o">=</span>cube-viewer&amp;server<span class="o">=</span>Planning%20Sample&amp;cube<span class="o">=</span>plan_BudgetPlan&amp;view<span class="o">=</span>Budget%20Input%20Detailed
 </code></pre>
 <p>Method: <code>GET</code></p>
 
-<p>URL Format: <code>/?p1=a1&amp;p2=a2&amp;...#f1=a3&amp;f2=a4&amp;...</code></p>
+<p>URL Format: <code>/ui?p1=a1&amp;p2=a2&amp;...#f1=a3&amp;f2=a4&amp;...</code></p>
 
 <p>Query parameters: <code>?p1=a1&amp;p2=a2&amp;...</code></p>
 
@@ -321,7 +321,7 @@ All parameters are case sensitive.
 <blockquote>
 <p>Example:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span>book&amp;path<span class="o">=</span>/shared/myBook1
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/ui?type<span class="o">=</span>book&amp;path<span class="o">=</span>/shared/myBook1
 </code></pre>
 <p>The follow parameters apply to <code>type=book</code>.</p>
 
@@ -350,7 +350,7 @@ All parameters are case sensitive.
 <blockquote>
 <p>Example:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span>cube-viewer&amp;server<span class="o">=</span>Planning%20Sample&amp;cube<span class="o">=</span>plan_BudgetPlan&amp;view<span class="o">=</span>Budget%20Input%20Detailed
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/ui?type<span class="o">=</span>cube-viewer&amp;server<span class="o">=</span>Planning%20Sample&amp;cube<span class="o">=</span>plan_BudgetPlan&amp;view<span class="o">=</span>Budget%20Input%20Detailed
 </code></pre>
 <p>The follow parameters apply to <code>type=cube-viewer</code> when <code>path</code> is defined.</p>
 
@@ -397,7 +397,7 @@ All parameters are case sensitive.
 <blockquote>
 <p>Example:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span>cube-viewer&amp;path<span class="o">=</span>/shared/ABC/KamView
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/ui?type<span class="o">=</span>cube-viewer&amp;path<span class="o">=</span>/shared/ABC/KamView
 </code></pre>
 <p>The following parameters apply to <code>type=cube-viewer</code> when <code>path</code> is defined.</p>
 
@@ -457,7 +457,7 @@ All parameters are case sensitive.
 
 <!--
 ```shell
-<production url>/ui?type=drill-through&server=Planning%20Sample&dtCube=plan_BudgetPlan&dtType=Cube&dtScript=Budget_line_entry&dtCellCoord=FY%202004%20Budget,Total%20Business%20Unit,Total%20Organization,Sales,local%20exchange%20rate,Account%20Level%20Input,Q1-2004
+http(s)://<Planning Analytics Workspace URL>/ui?type=drill-through&server=Planning%20Sample&dtCube=plan_BudgetPlan&dtType=Cube&dtScript=Budget_line_entry&dtCellCoord=FY%202004%20Budget,Total%20Business%20Unit,Total%20Organization,Sales,local%20exchange%20rate,Account%20Level%20Input,Q1-2004
 ```
 -->
 
@@ -479,7 +479,7 @@ dtCellCoord | Yes | A comma separated list of target cells. | - `dtCellCoord=Tot
 <blockquote>
 <p>Example:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span>dimension-editor&amp;server<span class="o">=</span>Planning%20Sample&amp;dimension<span class="o">=</span>plan_business_unit&amp;hierarchy<span class="o">=</span>plan_business_unit
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/ui?type<span class="o">=</span>dimension-editor&amp;server<span class="o">=</span>Planning%20Sample&amp;dimension<span class="o">=</span>plan_business_unit&amp;hierarchy<span class="o">=</span>plan_business_unit
 </code></pre>
 <p>The following parameters apply to <code>type=dimension-editor</code>.</p>
 
@@ -520,7 +520,7 @@ dtCellCoord | Yes | A comma separated list of target cells. | - `dtCellCoord=Tot
 <blockquote>
 <p>Example:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span><span class="nb">set</span>-editor&amp;server<span class="o">=</span>Planning%20Sample&amp;dimension<span class="o">=</span>plan_business_unit&amp;hierarchy<span class="o">=</span>plan_business_unit&amp;uniqueName<span class="o">=</span>All%20Business%20Units
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/ui?type<span class="o">=</span><span class="nb">set</span>-editor&amp;server<span class="o">=</span>Planning%20Sample&amp;dimension<span class="o">=</span>plan_business_unit&amp;hierarchy<span class="o">=</span>plan_business_unit&amp;uniqueName<span class="o">=</span>All%20Business%20Units
 </code></pre>
 <p>The following parameters apply to <code>type=set-editor</code>.</p>
 
@@ -597,7 +597,7 @@ dtCellCoord | Yes | A comma separated list of target cells. | - `dtCellCoord=Tot
 <blockquote>
 <p>Example:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>&lt;production url&gt;/ui?type<span class="o">=</span>websheet&amp;Action<span class="o">=</span>Open&amp;Type<span class="o">=</span>WebSheet&amp;Workbook<span class="o">=</span>Applications/Planning%20Sample/Management%20Reporting/Actual%20v%20Budget&amp;AdminHost<span class="o">=</span>localhost&amp;TM1Server<span class="o">=</span>Planning%20Sample
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;//ui?type<span class="o">=</span>websheet&amp;Action<span class="o">=</span>Open&amp;Workbook<span class="o">=</span>Applications/Planning%20Sample/Management%20Reporting/Actual%20v%20Budget&amp;AdminHost<span class="o">=</span>localhost&amp;TM1Server<span class="o">=</span>Planning%20Sample
 </code></pre>
 <p>The TM1 Web URL API parameters apply to <code>type=websheet</code>. Currently, none of the parameters passed in are changed. The parameters are simply copied when it redirects to the TM1Web URL API to render a websheet.</p>
 
@@ -812,7 +812,7 @@ window.addEventListener<span class="o">(</span><span class="s2">"message"</span>
         <span class="nt">div</span><span class="nf">#widgetContent</span> <span class="nt">iframe</span><span class="nf">#widget</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="p">}</span>
     <span class="nt">&lt;/style&gt;</span>
     <span class="nt">&lt;script&gt;</span>
-        <span class="kd">var</span> <span class="nx">API_URL</span> <span class="o">=</span> <span class="s1">'&lt;production url&gt;'</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">API_URL</span> <span class="o">=</span> <span class="s1">'&lt;Planning Analytics Workspace URL&gt;'</span><span class="p">;</span>
         <span class="kd">var</span> <span class="nx">IS_WIDGET_READY</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
         <span class="kd">var</span> <span class="nx">iframe</span><span class="p">;</span>
 
