@@ -162,7 +162,7 @@ private | No | Defines whether or not the set or subset is private. Can be eithe
 > Example:
 
 ```shell
-http(s)://<Planning Analytics Workspace URL>//ui?type=websheet&Action=Open&Workbook=Applications/Planning%20Sample/Management%20Reporting/Actual%20v%20Budget&AdminHost=localhost&TM1Server=Planning%20Sample
+http(s)://<Planning Analytics Workspace URL>//ui#type=websheet&Action=Open&Workbook=Applications/Planning%20Sample/Management%20Reporting/Actual%20v%20Budget&AdminHost=localhost&TM1Server=Planning%20Sample
 ```
 
 The TM1 Web URL API parameters apply to `type=websheet`. Currently, none of the parameters passed in are changed. The parameters are simply copied when it redirects to the TM1Web URL API to render a websheet.
