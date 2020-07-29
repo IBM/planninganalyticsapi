@@ -5,7 +5,7 @@ You can safely enable cross-origin communication between the parent dom (the "cl
 The Planning Analytics Workspace UI widgets are usually contained inside of an iframe. The approach documented in this section is safe for same-origin and cross-origin communication.
 
 <aside class="notice">
-You can embed the Planning Analytics Workspace UI API in an iframe for Planning Analytics Workspace Local, but you cannot embed the API in an iframe for Planning Analytics Workspace on Cloud. To embed the Planning Analytics Workspace UI API in an iframe for Planning Analytics Workspace Local, you must enable CORS. For more information on how you can enable CORS for Planning Analytics Workspace Local, see <a href='https://www-03preprod.ibm.com/support/knowledgecenter/SSD29G_2.0.0_test/com.ibm.swg.ba.cognos.tm1_inst.2.0.0.doc/c_paw_config_file.html'>Configure parameters</a>.
+You can embed the Planning Analytics Workspace UI API in an iframe for Planning Analytics Workspace Local, but you cannot embed the API in an iframe for Planning Analytics Workspace on Cloud. To embed the Planning Analytics Workspace UI API in an iframe for Planning Analytics Workspace Local, you must enable CORS. For more information on how you can enable CORS for Planning Analytics Workspace Local, see <a href='https://www.ibm.com/support/knowledgecenter/SSD29G_2.0.0/com.ibm.swg.ba.cognos.tm1_inst.2.0.0.doc/c_paw_config_file.html'>Configure parameters</a>.
 </aside>
 
 Sending and receiving messages from the client are accomplished using the `Window.postMessage` API. <a href='https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage'>See this link for more information</a>.
