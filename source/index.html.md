@@ -22,4 +22,8 @@ Use the IBM Planning Analytics Workspace UI API to return generated Planning Ana
 The Planning Analytics Workspace UI API is developed and built using the <a href='https://github.com/nestjs/nest'>Nest</a> framework.
 
 Some code examples contain `http(s)://<Planning Analytics Workspace URL>`. If you are using these code examples, be sure to replace `<Planning Analytics Workspace URL>` with your own Planning Analytics Workspace URL.
+
+# How to login
+
+Test
  
