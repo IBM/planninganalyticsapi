@@ -3,10 +3,16 @@
 You can use an endpoint to return an HTML page that renders a Planning Analytics Workspace book, a Planning Analytics Workspace view, a TM1 legacy view, a drill through view, a dimension editor, a set editor, or a websheet.
 
 ## Syntax
-> Example:
+> Example for Classic experience:
 
 ```shell
 http(s)://<Planning Analytics Workspace URL>/ui?type=cube-viewer&server=Planning%20Sample&cube=plan_BudgetPlan&view=Budget%20Input%20Detailed
+```
+
+> Example for New experience:
+
+```shell
+http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?type=cube-viewer&server=Planning%20Sample&cube=plan_BudgetPlan&view=Budget%20Input%20Detailed
 ```
 
 Method: `GET`
@@ -41,10 +47,16 @@ All parameters are case sensitive.
 
 ## Planning Analytics Workspace books
 
-> Example:
+> Example for Classic experience:
 
 ```shell
 http(s)://<Planning Analytics Workspace URL>/ui?type=book&path=/shared/myBook1
+```
+
+> Example for New experience:
+
+```shell
+http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?type=book&path=/shared/myBook1
 ```
 
 The follow parameters apply to `type=book`.
@@ -56,10 +68,16 @@ path | Yes | The absolute location of the asset| - `path=/shared/myBook` <br> - 
 
 ## Planning Analytics Workspace views
 
-> Example:
+> Example for Classic experience:
 
 ```shell
 http(s)://<Planning Analytics Workspace URL>/ui?type=cube-viewer&server=Planning%20Sample&cube=plan_BudgetPlan&view=Budget%20Input%20Detailed
+```
+
+> Example for New experience:
+
+```shell
+http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?type=cube-viewer&server=Planning%20Sample&cube=plan_BudgetPlan&view=Budget%20Input%20Detailed
 ```
 
 The follow parameters apply to `type=cube-viewer` when `path` is defined.
@@ -73,10 +91,16 @@ toolbar | No | See the TM1 Legacy views section below for more detail. | - `tool
 
 ## TM1 Legacy views
 
-> Example:
+> Example for Classic experience:
 
 ```shell
 http(s)://<Planning Analytics Workspace URL>/ui?type=cube-viewer&path=/shared/ABC/KamView
+```
+
+> Example for New experience:
+
+```shell
+http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?type=cube-viewer&path=/shared/ABC/KamView
 ```
 
 The following parameters apply to `type=cube-viewer` when `path` is defined.
@@ -118,10 +142,16 @@ dtCellCoord | Yes | A comma separated list of target cells. | - `dtCellCoord=Tot
 
 ## Dimension editor
 
-> Example:
+> Example for Classic experience:
 
 ```shell
 http(s)://<Planning Analytics Workspace URL>/ui?type=dimension-editor&server=Planning%20Sample&dimension=plan_business_unit&hierarchy=plan_business_unit
+```
+
+> Example for New experience:
+
+```shell
+http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?type=dimension-editor&server=Planning%20Sample&dimension=plan_business_unit&hierarchy=plan_business_unit
 ```
 
 The following parameters apply to `type=dimension-editor`.
@@ -135,10 +165,16 @@ hierarchy | No | Name of the hierarchy of the specified `dimension`. This hierar
 
 ## Set editor
 
-> Example:
+> Example for Classic experience:
 
 ```shell
 http(s)://<Planning Analytics Workspace URL>/ui?type=set-editor&server=Planning%20Sample&dimension=plan_business_unit&hierarchy=plan_business_unit&uniqueName=All%20Business%20Units
+```
+
+> Example for New experience:
+
+```shell
+http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?type=set-editor&server=Planning%20Sample&dimension=plan_business_unit&hierarchy=plan_business_unit&uniqueName=All%20Business%20Units
 ```
 
 The following parameters apply to `type=set-editor`.
@@ -158,10 +194,16 @@ private | No | Defines whether or not the set or subset is private. Can be eithe
 
 ## Websheet
 
-> Example:
+> Example for Classic experience:
 
 ```shell
-http(s)://<Planning Analytics Workspace URL>//ui#type=websheet&Action=Open&Workbook=Applications/Planning%20Sample/Management%20Reporting/Actual%20v%20Budget&AdminHost=localhost&TM1Server=Planning%20Sample
+http(s)://<Planning Analytics Workspace URL>//ui?type=websheet&Action=Open&Workbook=Applications/Planning%20Sample/Management%20Reporting/Actual%20v%20Budget&AdminHost=localhost&TM1Server=Planning%20Sample
+```
+
+> Example for New experience:
+
+```shell
+http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?type=websheet&Action=Open&Workbook=Applications/Planning%20Sample/Management%20Reporting/Actual%20v%20Budget&AdminHost=localhost&TM1Server=Planning%20Sample
 ```
 
 The TM1 Web URL API parameters apply to `type=websheet`. Currently, none of the parameters passed in are changed. The parameters are simply copied when it redirects to the TM1Web URL API to render a websheet.
