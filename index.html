@@ -222,7 +222,24 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#how-to-login" class="toc-h1 toc-link" data-title="How to login">How to login</a>
+            <a href="#logging-in" class="toc-h1 toc-link" data-title="Logging in">Logging in</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#negotiate-authentication" class="toc-h2 toc-link" data-title="Negotiate authentication">Negotiate authentication</a>
+                  </li>
+                  <li>
+                    <a href="#cognos-cam-passport" class="toc-h2 toc-link" data-title="Cognos CAM passport">Cognos CAM passport</a>
+                  </li>
+                  <li>
+                    <a href="#cognos-cam-namespace" class="toc-h2 toc-link" data-title="Cognos CAM namespace">Cognos CAM namespace</a>
+                  </li>
+                  <li>
+                    <a href="#cognos-cam-or-tm1-native-authentication" class="toc-h2 toc-link" data-title="Cognos CAM or TM1 native authentication">Cognos CAM or TM1 native authentication</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#login-tokens" class="toc-h1 toc-link" data-title="Login tokens">Login tokens</a>
           </li>
           <li>
             <a href="#showing-a-widget" class="toc-h1 toc-link" data-title="Showing a widget">Showing a widget</a>
@@ -281,8 +298,38 @@
 <p>The Planning Analytics Workspace UI API is developed and built using the <a href='https://github.com/nestjs/nest'>Nest</a> framework.</p>
 
 <p>Some code examples contain <code>http(s)://&lt;Planning Analytics Workspace URL&gt;</code>. If you are using these code examples, be sure to replace <code>&lt;Planning Analytics Workspace URL&gt;</code> with your own Planning Analytics Workspace URL.</p>
-<h1 id='how-to-login'>How to login</h1>
-<p>Test
+<h1 id='logging-in'>Logging in</h1>
+<p>You can access the Planning Analytics Workspace UI API in several different ways. If you are accessing the API from the <code>/ui</code> path, you will be prompted to log in using a pop up dialog box. However, there may be other scenarios where you will need to log in using the POST method. For these methods, use <code>/login</code> in the POST header.</p>
+<h2 id='negotiate-authentication'>Negotiate authentication</h2>
+<p>To use the Negotiate authentication method, Planning Analytics Workspace must be configured to use a TM1 authentication server that supports Negotiate authentication (mode 2 and 3).</p>
+<h3 id='body'>Body</h3>
+<p>Include the following in the body of your login POST request:</p>
+
+<p>JSON: <code>{ “mode”: “negotiate” }</code>
+FORM: <code>mode=negotiate</code></p>
+<h2 id='cognos-cam-passport'>Cognos CAM passport</h2>
+<p>To use the Cognos CAM passport for login, Planning Analytics Workspace must be configured to use CAM authentication or use a TM1 authentication server that is configured with CAM (mode 5).</p>
+<h3 id='body-2'>Body</h3>
+<p>Include the following in the body of your login POST request:</p>
+
+<p>JSON: <code>{ “camid”: “CAM-PASSPORT-COOKIE-VALUE” }</code>
+FORM: <code>camid=CAM-PASSPORT-COOKIE-VALUE</code></p>
+<h2 id='cognos-cam-namespace'>Cognos CAM namespace</h2>
+<p>To use the Cognos CAM namespace for login, Planning Analytics Workspace must be configured to use CAM authentication or use a TM1 authentication server that is configured with CAM (mode 5).</p>
+<h3 id='body-3'>Body</h3>
+<p>Include the following in the body of your login POST request:</p>
+
+<p>JSON: <code>{ “username”: “TM1-OR-COGNOS-USER”, “password”: “PASSWORD” }</code>
+FORM: <code>username=URLENC-TM1-OR-COGNOS-USER&amp;password=URLENC-PASSWORD</code></p>
+<h2 id='cognos-cam-or-tm1-native-authentication'>Cognos CAM or TM1 native authentication</h2>
+<p>To use Cognos CAM or TM1 native authentication for login, Planning Analytics Workspace must be configured to use CAM with a preset namespace or configured to use a TM1 authentication server that uses native authentication (mode 1 or 2).</p>
+<h3 id='body-4'>Body</h3>
+<p>Include the following in the body of your login POST request:</p>
+
+<p>JSON: <code>{ “namespace”: “CAM-NAMESPACE-ID”, “username”: “COGNOS-USER”, “password”: “PASSWORD” }</code>
+FORM: <code>namespace=URLENC-CAM-NAMESPACE-ID&amp;username=URLENC-COGNOS-USER&amp;password=URLENC-PASSWORD</code></p>
+<h1 id='login-tokens'>Login tokens</h1>
+<p>The Planning Analytics Workspace UI API accepts <code>x-csrf-token</code> and <code>ba-sso-authenticity</code> fields in the request header. After you send the login POST request, you will receive a response that contains an <code>x-csrf-token</code>. You can use the <code>x-csrf-token</code> in the header of future requests.
  </p>
 <h1 id='showing-a-widget'>Showing a widget</h1>
 <p>You can use an endpoint to return an HTML page that renders a Planning Analytics Workspace book, a Planning Analytics Workspace view, a TM1 legacy view, a drill through view, a dimension editor, a set editor, or a websheet.</p>
@@ -383,13 +430,7 @@ All parameters are case sensitive.
 <td>server</td>
 <td>No</td>
 <td>Overrides which TM1 server the view is located in. You can use this parameter if you have multiple TM1 servers with the same cube view; if you have a Planning Analytics Workspace view for one TM1 server, but want to use another TM1 server, you can use the <code>server</code> parameter to define which server to use.</td>
-<td></td>
-</tr>
-<tr>
 <td>- <code>server=Planning_Sample2</code></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>toolbar</td>
