@@ -339,9 +339,14 @@
 <p>You can use an endpoint to return an HTML page that renders a Planning Analytics Workspace book, a Planning Analytics Workspace view, a TM1 legacy view, a drill through view, a dimension editor, a set editor, or a websheet.</p>
 <h2 id='syntax'>Syntax</h2>
 <blockquote>
-<p>Example:</p>
+<p>Example for Classic experience:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/ui?type<span class="o">=</span>cube-viewer&amp;server<span class="o">=</span>Planning%20Sample&amp;cube<span class="o">=</span>plan_BudgetPlan&amp;view<span class="o">=</span>Budget%20Input%20Detailed
+</code></pre>
+<blockquote>
+<p>Example for New experience:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?type<span class="o">=</span>cube-viewer&amp;server<span class="o">=</span>Planning%20Sample&amp;cube<span class="o">=</span>plan_BudgetPlan&amp;view<span class="o">=</span>Budget%20Input%20Detailed
 </code></pre>
 <p>Method: <code>GET</code></p>
 
@@ -375,9 +380,14 @@ All parameters are case sensitive.
 </aside>
 <h2 id='planning-analytics-workspace-books'>Planning Analytics Workspace books</h2>
 <blockquote>
-<p>Example:</p>
+<p>Example for Classic experience:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/ui?type<span class="o">=</span>book&amp;path<span class="o">=</span>/shared/myBook1
+</code></pre>
+<blockquote>
+<p>Example for New experience:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?type<span class="o">=</span>book&amp;path<span class="o">=</span>/shared/myBook1
 </code></pre>
 <p>The follow parameters apply to <code>type=book</code>.</p>
 
@@ -404,9 +414,14 @@ All parameters are case sensitive.
 </tbody></table>
 <h2 id='planning-analytics-workspace-views'>Planning Analytics Workspace views</h2>
 <blockquote>
-<p>Example:</p>
+<p>Example for Classic experience:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/ui?type<span class="o">=</span>cube-viewer&amp;server<span class="o">=</span>Planning%20Sample&amp;cube<span class="o">=</span>plan_BudgetPlan&amp;view<span class="o">=</span>Budget%20Input%20Detailed
+</code></pre>
+<blockquote>
+<p>Example for New experience:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?type<span class="o">=</span>cube-viewer&amp;server<span class="o">=</span>Planning%20Sample&amp;cube<span class="o">=</span>plan_BudgetPlan&amp;view<span class="o">=</span>Budget%20Input%20Detailed
 </code></pre>
 <p>The follow parameters apply to <code>type=cube-viewer</code> when <code>path</code> is defined.</p>
 
@@ -445,9 +460,14 @@ All parameters are case sensitive.
 </tbody></table>
 <h2 id='tm1-legacy-views'>TM1 Legacy views</h2>
 <blockquote>
-<p>Example:</p>
+<p>Example for Classic experience:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/ui?type<span class="o">=</span>cube-viewer&amp;path<span class="o">=</span>/shared/ABC/KamView
+</code></pre>
+<blockquote>
+<p>Example for New experience:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?type<span class="o">=</span>cube-viewer&amp;path<span class="o">=</span>/shared/ABC/KamView
 </code></pre>
 <p>The following parameters apply to <code>type=cube-viewer</code> when <code>path</code> is defined.</p>
 
@@ -527,9 +547,14 @@ dtCellCoord | Yes | A comma separated list of target cells. | - `dtCellCoord=Tot
 -->
 <h2 id='dimension-editor'>Dimension editor</h2>
 <blockquote>
-<p>Example:</p>
+<p>Example for Classic experience:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/ui?type<span class="o">=</span>dimension-editor&amp;server<span class="o">=</span>Planning%20Sample&amp;dimension<span class="o">=</span>plan_business_unit&amp;hierarchy<span class="o">=</span>plan_business_unit
+</code></pre>
+<blockquote>
+<p>Example for New experience:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?type<span class="o">=</span>dimension-editor&amp;server<span class="o">=</span>Planning%20Sample&amp;dimension<span class="o">=</span>plan_business_unit&amp;hierarchy<span class="o">=</span>plan_business_unit
 </code></pre>
 <p>The following parameters apply to <code>type=dimension-editor</code>.</p>
 
@@ -568,9 +593,14 @@ dtCellCoord | Yes | A comma separated list of target cells. | - `dtCellCoord=Tot
 </tbody></table>
 <h2 id='set-editor'>Set editor</h2>
 <blockquote>
-<p>Example:</p>
+<p>Example for Classic experience:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/ui?type<span class="o">=</span><span class="nb">set</span>-editor&amp;server<span class="o">=</span>Planning%20Sample&amp;dimension<span class="o">=</span>plan_business_unit&amp;hierarchy<span class="o">=</span>plan_business_unit&amp;uniqueName<span class="o">=</span>All%20Business%20Units
+</code></pre>
+<blockquote>
+<p>Example for New experience:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?type<span class="o">=</span><span class="nb">set</span>-editor&amp;server<span class="o">=</span>Planning%20Sample&amp;dimension<span class="o">=</span>plan_business_unit&amp;hierarchy<span class="o">=</span>plan_business_unit&amp;uniqueName<span class="o">=</span>All%20Business%20Units
 </code></pre>
 <p>The following parameters apply to <code>type=set-editor</code>.</p>
 
@@ -645,9 +675,14 @@ dtCellCoord | Yes | A comma separated list of target cells. | - `dtCellCoord=Tot
 </tbody></table>
 <h2 id='websheet'>Websheet</h2>
 <blockquote>
-<p>Example:</p>
+<p>Example for Classic experience:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;//ui#type<span class="o">=</span>websheet&amp;Action<span class="o">=</span>Open&amp;Workbook<span class="o">=</span>Applications/Planning%20Sample/Management%20Reporting/Actual%20v%20Budget&amp;AdminHost<span class="o">=</span>localhost&amp;TM1Server<span class="o">=</span>Planning%20Sample
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;//ui?type<span class="o">=</span>websheet&amp;Action<span class="o">=</span>Open&amp;Workbook<span class="o">=</span>Applications/Planning%20Sample/Management%20Reporting/Actual%20v%20Budget&amp;AdminHost<span class="o">=</span>localhost&amp;TM1Server<span class="o">=</span>Planning%20Sample
+</code></pre>
+<blockquote>
+<p>Example for New experience:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?type<span class="o">=</span>websheet&amp;Action<span class="o">=</span>Open&amp;Workbook<span class="o">=</span>Applications/Planning%20Sample/Management%20Reporting/Actual%20v%20Budget&amp;AdminHost<span class="o">=</span>localhost&amp;TM1Server<span class="o">=</span>Planning%20Sample
 </code></pre>
 <p>The TM1 Web URL API parameters apply to <code>type=websheet</code>. Currently, none of the parameters passed in are changed. The parameters are simply copied when it redirects to the TM1Web URL API to render a websheet.</p>
 
