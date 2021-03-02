@@ -68,8 +68,7 @@ Parameter name | Required | Description | Examples
 ---------- | ------- | ------- | ------- |
 type | Yes | The type of widget to render (alias `Type`). | - `type=cube-viewer`
 path | Yes | The absolute location of the asset| - `path=/shared/myView` <br> - `path=/shared/path/to/my/view/myView`
-server | No | Overrides which TM1 server the view is located in. You can use this parameter if you have multiple TM1 servers with the same cube view; if you have a Planning Analytics Workspace view for one TM1 server, but want to use another TM1 server, you can use the `server` parameter to define which server to use.
-| - `server=Planning_Sample2`
+server | No | Overrides which TM1 server the view is located in. You can use this parameter if you have multiple TM1 servers with the same cube view; if you have a Planning Analytics Workspace view for one TM1 server, but want to use another TM1 server, you can use the `server` parameter to define which server to use.| - `server=Planning_Sample2`
 toolbar | No | See the TM1 Legacy views section below for more detail. | - `toolbar=all` <br> <img width=400/>
 
 ## TM1 Legacy views
