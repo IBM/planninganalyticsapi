@@ -35,6 +35,7 @@ To use the Negotiate authentication method, Planning Analytics Workspace must be
 Include the following in the body of your login POST request:
 
 JSON: `{ “mode”: “negotiate” }`
+
 FORM: `mode=negotiate`
 
 ## Cognos CAM passport
@@ -45,6 +46,7 @@ To use the Cognos CAM passport for login, Planning Analytics Workspace must be c
 Include the following in the body of your login POST request:
 
 JSON: `{ “camid”: “CAM-PASSPORT-COOKIE-VALUE” }`
+
 FORM: `camid=CAM-PASSPORT-COOKIE-VALUE`
 
 ## Cognos CAM namespace
@@ -55,6 +57,7 @@ To use the Cognos CAM namespace for login, Planning Analytics Workspace must be 
 Include the following in the body of your login POST request:
 
 JSON: `{ “username”: “TM1-OR-COGNOS-USER”, “password”: “PASSWORD” }`
+
 FORM: `username=URLENC-TM1-OR-COGNOS-USER&password=URLENC-PASSWORD`
 
 ## Cognos CAM or TM1 native authentication
@@ -65,6 +68,7 @@ To use Cognos CAM or TM1 native authentication for login, Planning Analytics Wor
 Include the following in the body of your login POST request:
 
 JSON: `{ “namespace”: “CAM-NAMESPACE-ID”, “username”: “COGNOS-USER”, “password”: “PASSWORD” }`
+
 FORM: `namespace=URLENC-CAM-NAMESPACE-ID&username=URLENC-COGNOS-USER&password=URLENC-PASSWORD`
 
 # Login tokens
