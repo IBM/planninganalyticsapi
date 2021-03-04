@@ -59,12 +59,26 @@ http(s)://<Planning Analytics Workspace URL>/ui?type=book&path=/shared/myBook1
 http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?type=book&path=/shared/myBook1
 ```
 
+> Example for opening a book in the New experience using the `path` parameter:
+
+```shell
+http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?perspective=dashboard&path=/shared/mybook&embed=true
+```
+
+> Example for opening a book in the New experience using the `embed` parameter:
+
+```shell
+http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?perspective=dashboard&id=5ed60895-b1b9-4452-a40e-1bbd8d223542&embed=true
+```
+
 The follow parameters apply to `type=book`.
 
 Parameter name | Required | Description | Examples
 ---------- | ------- | ------- | ------- |
 type | Yes | The type of widget to render (alias `Type`). | - `type=book`
 path | Yes | The absolute location of the asset| - `path=/shared/myBook` <br> - `path=/shared/path/to/my/book/myBook` <br> - `path=/personal/path/to/my/book/myBook`
+
+If you are opening a book in the New experience, you do not need to use `/ui` in the path. You can open a book by using the `path` or the `embed` parameter.
 
 ## Planning Analytics Workspace views
 
