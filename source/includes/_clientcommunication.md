@@ -10,6 +10,18 @@ You can embed the Planning Analytics Workspace UI API in an iframe for Planning 
 
 Sending and receiving messages from the client are accomplished using the `Window.postMessage` API. <a href='https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage'>See this link for more information</a>.
 
+## AJAX requests
+
+> Example of a TM1 API request using AJAX:
+
+```shell
+GET /api/v0/tm1/Planning Sample/api/v1/Cubes
+```
+
+If you are sending AJAX requests from an application to access any of the Planning Analytics Workspace APIs, you need to use `/api/v0` as the root of your request. If you are sending AJAX requests without using `/api/v0/` as your root, you may experience a browser CORS issue.
+ 
+You do not need to use `/api/v0/` as your root if you are using the Planning Analytics Workspace UI API in the Classic experience.
+
 # Sending messages
 
 > Examples:

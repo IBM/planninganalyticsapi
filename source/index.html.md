@@ -73,5 +73,5 @@ FORM: `namespace=URLENC-CAM-NAMESPACE-ID&username=URLENC-COGNOS-USER&password=UR
 
 # Login tokens
 
-The Planning Analytics Workspace UI API accepts `x-csrf-token` and `ba-sso-authenticity` fields in the request header. After you send the login POST request, you will receive a response that contains an `x-csrf-token`. You can use the `x-csrf-token` in the header of future requests.
+The Planning Analytics Workspace API accepts the `x-csrf-token`field in the request header. After you send the login POST request, you will receive a response that contains an `x-csrf-token`. You can use the `x-csrf-token` in the header of future non-GET type requests that are sent via AJAX.
  
