@@ -394,6 +394,16 @@ All parameters are case sensitive.
 </blockquote>
 <pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?type<span class="o">=</span>book&amp;path<span class="o">=</span>/shared/myBook1
 </code></pre>
+<blockquote>
+<p>Example for opening a book in the New experience using the <code>path</code> parameter:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?perspective<span class="o">=</span>dashboard&amp;path<span class="o">=</span>/shared/mybook&amp;embed<span class="o">=</span><span class="nb">true</span>
+</code></pre>
+<blockquote>
+<p>Example for opening a book in the New experience using the <code>embed</code> parameter:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?perspective<span class="o">=</span>dashboard&amp;id<span class="o">=</span>5ed60895-b1b9-4452-a40e-1bbd8d223542&amp;embed<span class="o">=</span><span class="nb">true</span>
+</code></pre>
 <p>The follow parameters apply to <code>type=book</code>.</p>
 
 <table><thead>
@@ -417,6 +427,8 @@ All parameters are case sensitive.
 <td>- <code>path=/shared/myBook</code> <br> - <code>path=/shared/path/to/my/book/myBook</code> <br> - <code>path=/personal/path/to/my/book/myBook</code></td>
 </tr>
 </tbody></table>
+
+<p>If you are opening a book in the New experience, you do not need to use <code>/ui</code> in the path. You can open a book by using the <code>path</code> or the <code>embed</code> parameter.</p>
 <h2 id='planning-analytics-workspace-views'>Planning Analytics Workspace views</h2>
 <blockquote>
 <p>Example for Classic experience:</p>
