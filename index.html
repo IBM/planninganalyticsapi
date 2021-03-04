@@ -274,6 +274,11 @@
           </li>
           <li>
             <a href="#client-communication" class="toc-h1 toc-link" data-title="Client communication">Client communication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ajax-requests" class="toc-h2 toc-link" data-title="AJAX requests">AJAX requests</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#sending-messages" class="toc-h1 toc-link" data-title="Sending messages">Sending messages</a>
@@ -333,7 +338,7 @@
 
 <p>FORM: <code>namespace=URLENC-CAM-NAMESPACE-ID&amp;username=URLENC-COGNOS-USER&amp;password=URLENC-PASSWORD</code></p>
 <h1 id='login-tokens'>Login tokens</h1>
-<p>The Planning Analytics Workspace UI API accepts <code>x-csrf-token</code> and <code>ba-sso-authenticity</code> fields in the request header. After you send the login POST request, you will receive a response that contains an <code>x-csrf-token</code>. You can use the <code>x-csrf-token</code> in the header of future requests.
+<p>The Planning Analytics Workspace API accepts the <code>x-csrf-token</code>field in the request header. After you send the login POST request, you will receive a response that contains an <code>x-csrf-token</code>. You can use the <code>x-csrf-token</code> in the header of future non-GET type requests that are sent via AJAX.
  </p>
 <h1 id='showing-a-widget'>Showing a widget</h1>
 <p>You can use an endpoint to return an HTML page that renders a Planning Analytics Workspace book, a Planning Analytics Workspace view, a TM1 legacy view, a drill through view, a dimension editor, a set editor, or a websheet.</p>
@@ -697,6 +702,15 @@ You can embed the Planning Analytics Workspace UI API in an iframe for Planning 
 </aside>
 
 <p>Sending and receiving messages from the client are accomplished using the <code>Window.postMessage</code> API. <a href='https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage'>See this link for more information</a>.</p>
+<h2 id='ajax-requests'>AJAX requests</h2>
+<blockquote>
+<p>Example of a TM1 API request using AJAX:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>GET /api/v0/tm1/Planning Sample/api/v1/Cubes
+</code></pre>
+<p>If you are sending AJAX requests from an application to access any of the Planning Analytics Workspace APIs, you need to use <code>/api/v0</code> as the root of your request. If you are sending AJAX requests without using <code>/api/v0/</code> as your root, you may experience a browser CORS issue.</p>
+
+<p>You do not need to use <code>/api/v0/</code> as your root if you are using the Planning Analytics Workspace UI API in the Classic experience.</p>
 <h1 id='sending-messages'>Sending messages</h1>
 <blockquote>
 <p>Examples:</p>
