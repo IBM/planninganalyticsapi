@@ -53,7 +53,7 @@ All parameters are case sensitive.
 http(s)://<Planning Analytics Workspace URL>/ui?type=book&path=/shared/myBook1
 ```
 
-> Example for New experience:
+> Example for New experience view:
 
 ```shell
 http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?type=book&path=/shared/myBook1
