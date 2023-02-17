@@ -425,11 +425,13 @@ http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics W
 <td>path</td>
 <td>Yes</td>
 <td>The absolute location of the asset</td>
-<td>- <code>path=/shared/myBook</code> <br> - <code>path=/shared/path/to/my/book/myBook</code> <br> - <code>path=/personal/path/to/my/book/myBook</code></td>
+<td><code>path=/shared/myBook</code> <br> <code>path=/shared/path/to/my/book/myBook</code> <br><code>path=/personal/path/to/my/book/myBook</code></td>
 </tr>
 </tbody></table>
 
-<p>You can open a New experience book by using the Planning Analytics Workspace URL. If you want to control synchronization settings with the URL or JavaScript APIs, use the <code>/ui</code> parameter. You can also open a book by using the <code>embed</code> parameter which shows or hides the top navigation bar.</p>
+<p>You can open a New experience book by using the Planning Analytics Workspace URL. If you want to control synchronization settings with the URL or JavaScript APIs, use the <code>/ui</code> parameter. </p>
+
+<p>You can also open a book by using the <code>embed</code> parameter which shows or hides the top navigation bar.</p>
 <h2 id='planning-analytics-workspace-views'>Planning Analytics Workspace views</h2>
 <blockquote>
 <p>Example for Classic experience:</p>
@@ -471,7 +473,7 @@ http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics W
 <tr>
 <td>server</td>
 <td>No</td>
-<td>Overrides which TM1 server the view is located in. You can use this parameter if you have multiple TM1 servers with the same cube view; if you have a Planning Analytics Workspace view for one TM1 server, but want to use another TM1 server, you can use the <code>server</code> parameter to define which server to use.</td>
+<td>Overrides which TM1 server the view is located in. You can use this parameter if you have multiple TM1 servers with the same cube view. <br> If you have a Planning Analytics Workspace view for one TM1 server, but want to use another TM1 server, use the <code>server</code> parameter to define which server to use.</td>
 <td>- <code>server=Planning_Sample2</code></td>
 </tr>
 <tr>
@@ -484,7 +486,7 @@ http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics W
 <td>properties</td>
 <td>No</td>
 <td>JSON object where key is the property name and value is a boolean denoting the property is on or off.</td>
-<td>Supported properties are: <br> - <code>dimensionOverview_name</code> (default is true) <br> - <code>dimensionOverview_iconography</code>(default is true) <br> - <code>dimensionOverview_contextinformation</code>(default is true) <br> - <code>dimensionOverview_sectionheaders</code> <br> -  <code>dimensionOverview_sectionicons</code></td>
+<td>Supported properties are: <br><code>dimensionOverview_name</code> (default is true) <br> <code>dimensionOverview_iconography</code>(default is true) <br> <code>dimensionOverview_contextinformation</code>(default is true) <br> <code>dimensionOverview_sectionheaders</code> <br><code>dimensionOverview_sectionicons</code></td>
 </tr>
 </tbody></table>
 <h2 id='tm1-legacy-views'>TM1 Legacy views</h2>
