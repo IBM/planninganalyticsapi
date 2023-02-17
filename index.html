@@ -385,26 +385,27 @@ All parameters are case sensitive.
 </aside>
 <h2 id='planning-analytics-workspace-books'>Planning Analytics Workspace books</h2>
 <blockquote>
-<p>Example for Classic experience:</p>
+<p>Examples for Classic experience:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/ui?type<span class="o">=</span>book&amp;path<span class="o">=</span>/shared/myBook1
+http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/?perspective<span class="o">=</span>book&amp;path<span class="o">=</span>/shared/book1&amp;embed<span class="o">=</span><span class="nb">true</span>
 </code></pre>
 <blockquote>
 <p>Example for New experience view:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?type<span class="o">=</span>book&amp;path<span class="o">=</span>/shared/myBook1
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/ui?type<span class="o">=</span>book&amp;path<span class="o">=</span>/shared/myBook1
 </code></pre>
 <blockquote>
-<p>Example for opening a book in the New experience using the <code>path</code> parameter:</p>
+<p>Example for opening a book in the New experience:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?perspective<span class="o">=</span>dashboard&amp;path<span class="o">=</span>/shared/mybook&amp;embed<span class="o">=</span><span class="nb">true</span>
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/ui?type<span class="o">=</span>book&amp;path<span class="o">=</span>/shared/myBook1
 </code></pre>
 <blockquote>
 <p>Example for opening a book in the New experience using the <code>embed</code> parameter:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?perspective<span class="o">=</span>dashboard&amp;id<span class="o">=</span>5ed60895-b1b9-4452-a40e-1bbd8d223542&amp;embed<span class="o">=</span><span class="nb">true</span>
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace URL&gt;/?perspective<span class="o">=</span>dashboard&amp;path<span class="o">=</span>/shared/book1&amp;embed<span class="o">=</span><span class="nb">true</span>
 </code></pre>
-<p>The follow parameters apply to <code>type=book</code>.</p>
+<p>The following parameters apply to <code>type=book</code>.</p>
 
 <table><thead>
 <tr>
@@ -428,7 +429,7 @@ All parameters are case sensitive.
 </tr>
 </tbody></table>
 
-<p>If you are opening a book in the New experience, you do not need to use <code>/ui</code> in the path. You can open a book by using the <code>path</code> or the <code>embed</code> parameter.</p>
+<p>You can open a New experience book by using the Planning Analytics Workspace URL. If you want to control synchronization settings with the URL or JavaScript APIs, use the <code>/ui</code> parameter. You can also open a book by using the <code>embed</code> parameter which shows or hides the top navigation bar.</p>
 <h2 id='planning-analytics-workspace-views'>Planning Analytics Workspace views</h2>
 <blockquote>
 <p>Example for Classic experience:</p>
@@ -440,7 +441,12 @@ All parameters are case sensitive.
 </blockquote>
 <pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?type<span class="o">=</span>cube-viewer&amp;server<span class="o">=</span>Planning%20Sample&amp;cube<span class="o">=</span>plan_BudgetPlan&amp;view<span class="o">=</span>Budget%20Input%20Detailed
 </code></pre>
-<p>The follow parameters apply to <code>type=cube-viewer</code> when <code>path</code> is defined.</p>
+<blockquote>
+<p>Example for New experience using <code>properties</code> parameter:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?type<span class="o">=</span>cube-viewer&amp;server<span class="o">=</span>Planning%20Sample&amp;cube<span class="o">=</span>plan_BudgetPlan&amp;view<span class="o">=</span>Budget%20Input%20Detailed&amp;properties<span class="o">={</span><span class="s2">"dimensionOverview_name"</span>:false, <span class="s2">"dimensionOverview_sectionheaders"</span>: <span class="nb">false</span><span class="o">}</span>
+</code></pre>
+<p>The following parameters apply to <code>type=cube-viewer</code> when <code>path</code> is defined.</p>
 
 <table><thead>
 <tr>
@@ -459,7 +465,7 @@ All parameters are case sensitive.
 <tr>
 <td>path</td>
 <td>Yes</td>
-<td>The absolute location of the asset</td>
+<td>The absolute location of the asset.</td>
 <td>- <code>path=/shared/myView</code> <br> - <code>path=/shared/path/to/my/view/myView</code></td>
 </tr>
 <tr>
@@ -473,6 +479,12 @@ All parameters are case sensitive.
 <td>No</td>
 <td>See the TM1 Legacy views section below for more detail.</td>
 <td>- <code>toolbar=all</code> <br> <img width=400/></td>
+</tr>
+<tr>
+<td>properties</td>
+<td>No</td>
+<td>JSON object where key is the property name and value is a boolean denoting the property is on or off.</td>
+<td>Supported properties are: <br> - <code>dimensionOverview_name</code> (default is true) <br> - <code>dimensionOverview_iconography</code>(default is true) <br> - <code>dimensionOverview_contextinformation</code>(default is true) <br> - <code>dimensionOverview_sectionheaders</code> <br> -  <code>dimensionOverview_sectionicons</code></td>
 </tr>
 </tbody></table>
 <h2 id='tm1-legacy-views'>TM1 Legacy views</h2>
