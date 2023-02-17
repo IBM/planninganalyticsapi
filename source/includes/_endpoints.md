@@ -47,38 +47,39 @@ All parameters are case sensitive.
 
 ## Planning Analytics Workspace books
 
-> Example for Classic experience:
+> Examples for Classic experience:
 
 ```shell
 http(s)://<Planning Analytics Workspace URL>/ui?type=book&path=/shared/myBook1
+http(s)://<Planning Analytics Workspace URL>/?perspective=book&path=/shared/book1&embed=true
 ```
 
 > Example for New experience view:
 
 ```shell
-http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?type=book&path=/shared/myBook1
+http(s)://<Planning Analytics Workspace URL>/ui?type=book&path=/shared/myBook1
 ```
 
-> Example for opening a book in the New experience using the `path` parameter:
+> Example for opening a book in the New experience:
 
 ```shell
-http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?perspective=dashboard&path=/shared/mybook&embed=true
+http(s)://<Planning Analytics Workspace URL>/ui?type=book&path=/shared/myBook1
 ```
 
 > Example for opening a book in the New experience using the `embed` parameter:
 
 ```shell
-http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?perspective=dashboard&id=5ed60895-b1b9-4452-a40e-1bbd8d223542&embed=true
-```
+http(s)://<Planning Analytics Workspace URL>/?perspective=dashboard&path=/shared/book1&embed=true
+``` 
 
-The follow parameters apply to `type=book`.
+The following parameters apply to `type=book`.
 
 Parameter name | Required | Description | Examples
 ---------- | ------- | ------- | ------- |
 type | Yes | The type of widget to render (alias `Type`). | - `type=book`
 path | Yes | The absolute location of the asset| - `path=/shared/myBook` <br> - `path=/shared/path/to/my/book/myBook` <br> - `path=/personal/path/to/my/book/myBook`
 
-If you are opening a book in the New experience, you do not need to use `/ui` in the path. You can open a book by using the `path` or the `embed` parameter.
+You can open a New experience book by using the Planning Analytics Workspace URL. If you want to control synchronization settings with the URL or JavaScript APIs, use the `/ui` parameter. You can also open a book by using the `embed` parameter which shows or hides the top navigation bar.
 
 ## Planning Analytics Workspace views
 
@@ -93,15 +94,21 @@ http(s)://<Planning Analytics Workspace URL>/ui?type=cube-viewer&server=Planning
 ```shell
 http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?type=cube-viewer&server=Planning%20Sample&cube=plan_BudgetPlan&view=Budget%20Input%20Detailed
 ```
+> Example for New experience using `properties` parameter:
 
-The follow parameters apply to `type=cube-viewer` when `path` is defined.
+```shell
+http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?type=cube-viewer&server=Planning%20Sample&cube=plan_BudgetPlan&view=Budget%20Input%20Detailed&properties={"dimensionOverview_name":false, "dimensionOverview_sectionheaders": false}
+```
+
+The following parameters apply to `type=cube-viewer` when `path` is defined.
 
 Parameter name | Required | Description | Examples
 ---------- | ------- | ------- | ------- |
 type | Yes | The type of widget to render (alias `Type`). | - `type=cube-viewer`
-path | Yes | The absolute location of the asset| - `path=/shared/myView` <br> - `path=/shared/path/to/my/view/myView`
+path | Yes | The absolute location of the asset.| - `path=/shared/myView` <br> - `path=/shared/path/to/my/view/myView`
 server | No | Overrides which TM1 server the view is located in. You can use this parameter if you have multiple TM1 servers with the same cube view; if you have a Planning Analytics Workspace view for one TM1 server, but want to use another TM1 server, you can use the `server` parameter to define which server to use.| - `server=Planning_Sample2`
 toolbar | No | See the TM1 Legacy views section below for more detail. | - `toolbar=all` <br> <img width=400/>
+properties | No | JSON object where key is the property name and value is a boolean denoting the property is on or off. | Supported properties are: <br> - `dimensionOverview_name` (default is true) <br> - `dimensionOverview_iconography`(default is true) <br> - `dimensionOverview_contextinformation`(default is true) <br> - `dimensionOverview_sectionheaders` <br> -  `dimensionOverview_sectionicons`
 
 ## TM1 Legacy views
 
