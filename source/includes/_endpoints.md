@@ -77,7 +77,7 @@ The following parameters apply to `type=book`.
 Parameter name | Required | Description | Examples
 ---------- | ------- | ------- | ------- |
 type | Yes | The type of widget to render (alias `Type`). | - `type=book`
-path | Yes | The absolute location of the asset|`path=/shared/myBook` <br> `path=/shared/path/to/my/book/myBook` <br>`path=/personal/path/to/my/book/myBook`
+path | Yes | The absolute location of the asset.|-`path=/shared/myBook` <br>-`path=/shared/path/to/my/book/myBook` <br>-`path=/personal/path/to/my/book/myBook`
 
 You can open a New experience book by using the Planning Analytics Workspace URL. If you want to control synchronization settings with the URL or JavaScript APIs, use the `/ui` parameter. 
 
@@ -107,10 +107,10 @@ The following parameters apply to `type=cube-viewer` when `path` is defined.
 Parameter name | Required | Description | Examples
 ---------- | ------- | ------- | ------- |
 type | Yes | The type of widget to render (alias `Type`). | - `type=cube-viewer`
-path | Yes | The absolute location of the asset.| - `path=/shared/myView` <br> - `path=/shared/path/to/my/view/myView`
-server | No | Overrides which TM1 server the view is located in. You can use this parameter if you have multiple TM1 servers with the same cube view. <br> If you have a Planning Analytics Workspace view for one TM1 server, but want to use another TM1 server, use the `server` parameter to define which server to use.| - `server=Planning_Sample2`
+path | Yes | The absolute location of the asset.|-`path=/shared/myView` <br>-`path=/shared/path/to/my/view/myView`
+server | No | Overrides which TM1 server the view is located in. You can use this parameter if you have multiple TM1 servers with the same cube view. <br> If you have a Planning Analytics Workspace view for one TM1 server, but want to use another TM1 server, use the `server` parameter to define which server to use.| -`server=Planning_Sample2`
 toolbar | No | See the TM1 Legacy views section below for more detail. | - `toolbar=all` <br> <img width=400/>
-properties | No | JSON object where key is the property name and value is a boolean denoting the property is on or off. | Supported properties are: <br>`dimensionOverview_name` (default is true) <br> `dimensionOverview_iconography`(default is true) <br> `dimensionOverview_contextinformation`(default is true) <br> `dimensionOverview_sectionheaders` <br>`dimensionOverview_sectionicons`
+properties | No | JSON object where key is the property name and value is a boolean denoting the property is on or off. | Supported properties are: <br>-`dimensionOverview_name` (default is true) <br>-`dimensionOverview_iconography`(default is true) <br>-`dimensionOverview_contextinformation`(default is true) <br>-`dimensionOverview_sectionheaders` <br>-`dimensionOverview_sectionicons`
 
 ## TM1 Legacy views
 
