@@ -47,18 +47,13 @@ All parameters are case sensitive.
 
 ## Planning Analytics Workspace books
 
-> Examples for Classic experience:
+> Examples for opening a book in Classic experience:
 
 ```shell
 http(s)://<Planning Analytics Workspace URL>/ui?type=book&path=/shared/myBook1
 http(s)://<Planning Analytics Workspace URL>/?perspective=book&path=/shared/book1&embed=true
 ```
 
-> Example for New experience view:
-
-```shell
-http(s)://<Planning Analytics Workspace URL>/ui?type=book&path=/shared/myBook1
-```
 
 > Example for opening a book in the New experience:
 
