@@ -39,7 +39,7 @@ if(isWidgetReady && iframe.contentWindow) {
 }
 ```
 
-> Subscribes to the tm1mdv:executeCommand event. Once subscribed, the client will receive messages whenever that event occurs
+> Subscribes to the tm1mdv:executeCommand event. Once subscribed, the client receives messages whenever that event occurs
 
 ```shell
 iframe.contentWindow.postMessage({

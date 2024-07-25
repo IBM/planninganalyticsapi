@@ -94,7 +94,7 @@ http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port
 > Example for New experience using `properties` parameter:
 
 ```shell
-http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?type=cube-viewer&server=Planning%20Sample&cube=plan_BudgetPlan&view=Budget%20Input%20Detailed&properties={"dimensionOverview_name":false, "dimensionOverview_sectionheaders": false}
+http(s)://<Planning Analytics Workspace host>[<Planning Analytics Workspace port>/?type=cube-viewer&server=Planning%20Sample&cube=plan_BudgetPlan&view=Budget%20Input%20Detailed&properties={"dimensionOverview_name":false, "dimensionOverview_sectionheaders": false} 
 ```
 
 The following parameters apply to `type=cube-viewer` when `path` is defined.
