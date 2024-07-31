@@ -441,7 +441,7 @@ http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics W
 <blockquote>
 <p>Example for New experience using <code>properties</code> parameter:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?type<span class="o">=</span>cube-viewer&amp;server<span class="o">=</span>Planning%20Sample&amp;cube<span class="o">=</span>plan_BudgetPlan&amp;view<span class="o">=</span>Budget%20Input%20Detailed&amp;properties<span class="o">={</span><span class="s2">"dimensionOverview_name"</span>:false, <span class="s2">"dimensionOverview_sectionheaders"</span>: <span class="nb">false</span><span class="o">}</span>
+<pre class="highlight shell tab-shell"><code>http<span class="o">(</span>s<span class="o">)</span>://&lt;Planning Analytics Workspace host&gt;[&lt;Planning Analytics Workspace port&gt;/?type<span class="o">=</span>cube-viewer&amp;server<span class="o">=</span>Planning%20Sample&amp;cube<span class="o">=</span>plan_BudgetPlan&amp;view<span class="o">=</span>Budget%20Input%20Detailed&amp;properties<span class="o">={</span><span class="s2">"dimensionOverview_name"</span>:false, <span class="s2">"dimensionOverview_sectionheaders"</span>: <span class="nb">false</span><span class="o">}</span> 
 </code></pre>
 <p>The following parameters apply to <code>type=cube-viewer</code> when <code>path</code> is defined.</p>
 
@@ -748,7 +748,7 @@ You can embed the Planning Analytics Workspace UI API in an iframe for Planning 
 <span class="o">}</span>
 </code></pre>
 <blockquote>
-<p>Subscribes to the tm1mdv:executeCommand event. Once subscribed, the client will receive messages whenever that event occurs</p>
+<p>Subscribes to the tm1mdv:executeCommand event. Once subscribed, the client receives messages whenever that event occurs</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>iframe.contentWindow.postMessage<span class="o">({</span>
     <span class="nb">type</span>: <span class="s2">"subscribe"</span>,
