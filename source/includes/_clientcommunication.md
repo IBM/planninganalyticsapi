@@ -62,6 +62,17 @@ iframe.contentWindow.postMessage({
     }
 }, "<production url>");
 ```
+> Subscribes to the `tm1mdv:commandProgress` event. Once subscribed, the client receives a message whenever a command is in progress and when it finishes.
+
+```shell
+iframe.contentWindow.postMessage({
+    type: 'subscribe',
+    eventName: 'tm1mdv:commandProgress',
+    eventPayload: {
+        name: "second subscription"
+    }
+}, "http://localhost:8080/ui");
+```
 
 > Triggers an redraw event.
 
@@ -120,6 +131,32 @@ function handleEvent(eventName, eventPayload) {
     if(eventName == "tm1mdv:executeCommand") {
         // first subscription was just notified!
         alert(eventPayload.name + ' was just notified!');
+    }
+}
+```
+> Receiving an `on` message to check the progress of a command.
+
+```shell
+function handleEvent(eventName, eventPayload) {
+    if(eventName === 'tm1mdv:commandProgress') {
+        handleCommandProgress(eventPayload);
+    }
+    ...
+}
+function handleCommandProgress(payload) {
+    switch (payload.commandProgress) {
+        case 0:
+            // a value of 0 indicates the command had failed
+            break;
+        case 1:
+            // a value of 1 indicates the command had finished successfully
+            break;
+        case 2:
+            // a value of 2 indicates the command had been canceled by the user
+            break;
+        case 4:
+            // a value of 4 indicates the command has started executing
+            break;
     }
 }
 ```
