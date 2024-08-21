@@ -770,6 +770,17 @@ You can embed the Planning Analytics Workspace UI API in an iframe for Planning 
 <span class="o">}</span>, <span class="s2">"&lt;production url&gt;"</span><span class="o">)</span>;
 </code></pre>
 <blockquote>
+<p>Subscribes to the <code>tm1mdv:commandProgress</code> event. Once subscribed, the client receives a message whenever a command is in progress and when it finishes.</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>iframe.contentWindow.postMessage<span class="o">({</span>
+    <span class="nb">type</span>: <span class="s1">'subscribe'</span>,
+    eventName: <span class="s1">'tm1mdv:commandProgress'</span>,
+    eventPayload: <span class="o">{</span>
+        name: <span class="s2">"second subscription"</span>
+    <span class="o">}</span>
+<span class="o">}</span>, <span class="s2">"http://localhost:8080/ui"</span><span class="o">)</span>;
+</code></pre>
+<blockquote>
 <p>Triggers an redraw event.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>iframe.contentWindow.postMessage<span class="o">({</span>
@@ -865,6 +876,32 @@ window.addEventListener<span class="o">(</span><span class="s2">"message"</span>
     <span class="k">if</span><span class="o">(</span>eventName <span class="o">==</span> <span class="s2">"tm1mdv:executeCommand"</span><span class="o">)</span> <span class="o">{</span>
         // first subscription was just notified!
         alert<span class="o">(</span>eventPayload.name + <span class="s1">' was just notified!'</span><span class="o">)</span>;
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+<blockquote>
+<p>Receiving an <code>on</code> message to check the progress of a command.</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="k">function </span>handleEvent<span class="o">(</span>eventName, eventPayload<span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span><span class="o">(</span>eventName <span class="o">===</span> <span class="s1">'tm1mdv:commandProgress'</span><span class="o">)</span> <span class="o">{</span>
+        handleCommandProgress<span class="o">(</span>eventPayload<span class="o">)</span>;
+    <span class="o">}</span>
+    ...
+<span class="o">}</span>
+<span class="k">function </span>handleCommandProgress<span class="o">(</span>payload<span class="o">)</span> <span class="o">{</span>
+    switch <span class="o">(</span>payload.commandProgress<span class="o">)</span> <span class="o">{</span>
+        <span class="k">case</span> 0:
+            // a value of 0 indicates the <span class="nb">command </span>had failed
+            <span class="nb">break</span>;
+        <span class="k">case</span> 1:
+            // a value of 1 indicates the <span class="nb">command </span>had finished successfully
+            <span class="nb">break</span>;
+        <span class="k">case</span> 2:
+            // a value of 2 indicates the <span class="nb">command </span>had been canceled by the user
+            <span class="nb">break</span>;
+        <span class="k">case</span> 4:
+            // a value of 4 indicates the <span class="nb">command </span>has started executing
+            <span class="nb">break</span>;
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre>
